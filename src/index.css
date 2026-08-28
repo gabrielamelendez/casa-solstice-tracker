@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+*,*::before,*::after{box-sizing:border-box}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-tap-highlight-color:transparent;margin:0}
+
+/* ══════════════ STUDIO (internal) ══════════════ */
+.studio-app{
+  --wine:#5C1A1A;--burg:#89203B;--sunset:#DA9A40;--vino:#8A2644;
+  --sand:#EDE0CE;--ink:#1E130C;--mid:#6B4E3D;--cream:#F5F0E8;--parchment:#FAF5EE;
+  background:var(--parchment);color:var(--ink);font-size:14px;min-height:100vh;
+}
+.studio-nav{background:var(--wine);padding:16px 20px 12px;position:sticky;top:0;z-index:100}
+.studio-nav-brand{font-family:Georgia,serif;font-style:italic;font-size:20px;color:var(--cream)}
+.studio-nav-sub{font-size:9px;letter-spacing:.28em;text-transform:uppercase;color:rgba(245,240,232,.4);margin-top:2px;display:flex;align-items:center;gap:6px}
+.sync-dot{width:6px;height:6px;border-radius:50%;display:inline-block}
+
+.cd-card{border-radius:10px;padding:16px;color:#fff}
+.cd-days{font-size:36px;font-weight:900;line-height:1}
+.cd-label{font-size:10px;opacity:.65;margin-top:4px}
+.cd-name{font-size:9px;opacity:.7;letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px}
+
+.project-card{background:#fff;border:1px solid var(--sand);border-radius:10px;padding:18px;margin-bottom:12px;cursor:pointer;transition:box-shadow .2s;border-left:5px solid transparent}
+.project-card:active{box-shadow:0 4px 16px rgba(30,19,12,.1)}
+.pc-name{font-family:Georgia,serif;font-style:italic;font-size:18px;margin-bottom:2px}
+.pc-concept{font-size:11px;color:var(--mid);margin-bottom:10px}
+.stat-pill{font-size:10px;padding:3px 10px;border-radius:20px}
+.progress-bar{height:4px;background:var(--sand);border-radius:2px}
+.progress-fill{height:100%;border-radius:2px;transition:width .4s}
+.pc-next{font-size:11px;color:var(--mid);font-style:italic;margin-top:8px}
+
+.reminder{background:var(--sunset);border-radius:10px;padding:16px;margin-top:20px}
+.reminder-label{font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink);opacity:.65;margin-bottom:6px;font-weight:700}
+.reminder-body{font-size:13px;color:var(--ink);line-height:1.65}
+
+.pv-header{padding:20px 16px 18px}
+.pv-name{font-family:Georgia,serif;font-style:italic;font-size:22px;color:#fff;margin-bottom:4px}
+.pv-meta span{font-size:10px;color:rgba(255,255,255,.65);letter-spacing:.12em;text-transform:uppercase}
+.pv-stat{background:rgba(255,255,255,.12);border-radius:8px;padding:8px 12px;text-align:center;min-width:60px}
+.pv-stat-num{font-size:20px;font-weight:700;color:#fff;line-height:1}
+.pv-stat-label{font-size:8px;color:rgba(255,255,255,.55);text-transform:uppercase;letter-spacing:.1em}
+.pv-progress{height:4px;background:rgba(255,255,255,.18);border-radius:2px;margin-top:10px}
+.pv-progress-fill{height:100%;background:#fff;border-radius:2px;transition:width .4s}
+
+.phase{background:#fff;border:1px solid var(--sand);border-radius:10px;margin-bottom:10px;overflow:hidden}
+.phase-header{padding:13px 16px;display:flex;align-items:center;gap:10px;cursor:pointer}
+.phase-title{font-size:14px;color:var(--ink);font-weight:600;margin-bottom:3px}
+.phase-deadline{font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.phase-prog{display:flex;align-items:center;gap:8px;margin-top:5px}
+.phase-bar{width:80px;height:3px;background:var(--sand);border-radius:2px}
+.phase-bar-fill{height:100%;border-radius:2px}
+.phase-pct{font-size:10px;color:var(--mid)}
+.tasks{border-top:1px solid var(--sand)}
+.task{padding:11px 16px 10px 20px;border-bottom:1px solid var(--parchment);display:flex;gap:10px;align-items:flex-start}
+.task:last-child{border-bottom:none}
+.task-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px}
+.task-name{font-size:13px;color:var(--ink);line-height:1.4}
+.task-name.done{text-decoration:line-through;color:var(--mid)}
+.task-note{font-size:11px;color:var(--mid);font-style:italic;margin-top:2px}
+.task-status{font-size:10px;padding:3px 10px;border-radius:20px;white-space:nowrap;font-weight:600;cursor:pointer;border:none}
+.back-btn{background:rgba(255,255,255,.15);border:none;color:#fff;border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer}
+
+/* ══════════════ CLIENT · Lynette & Eduardo ══════════════ */
+.client-le-app{
+  --accent:#89203B;--parchment:#FAF5EE;--sand:#EDE0CE;--ink:#1E130C;--mid:#6B4E3D;
+  background:var(--parchment);color:var(--ink);font-size:14px;min-height:100vh;
+}
+.client-le-app .header{background:var(--accent);padding:24px 20px 28px;text-align:center;position:relative;overflow:hidden}
+.client-le-app .header::before{content:'';position:absolute;width:300px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(242,208,200,.15) 0%,transparent 65%);top:-80px;right:-60px}
+.client-le-app .header-studio{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,240,232,.45);margin-bottom:10px}
+.client-le-app .header-names{font-family:Georgia,serif;font-style:italic;font-size:32px;color:#fff;line-height:1;margin-bottom:4px}
+.client-le-app .header-concept{font-size:12px;color:rgba(245,240,232,.5);font-style:italic;margin-bottom:16px}
+.client-le-app .header-date{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.4)}
+.client-le-app .progress-big{margin:16px auto 0;max-width:260px}
+.client-le-app .progress-pct{font-size:36px;font-weight:900;color:#fff;line-height:1;text-align:center}
+.client-le-app .progress-label{font-size:10px;color:rgba(245,240,232,.5);text-align:center;margin-top:2px;margin-bottom:10px;letter-spacing:.1em;text-transform:uppercase}
+.client-le-app .progress-track{height:6px;background:rgba(255,255,255,.15);border-radius:3px}
+.client-le-app .progress-fill{height:100%;background:#fff;border-radius:3px;transition:width .5s}
+.client-le-app .countdown-strip{background:rgba(0,0,0,.15);padding:10px 20px;text-align:center;font-size:13px;color:rgba(245,240,232,.7)}
+.client-le-app .countdown-strip strong{color:#fff}
+.client-le-app .content{padding:20px 16px 80px;max-width:600px;margin:0 auto}
+.client-le-app .section-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;margin-top:20px}
+.client-le-app .phase{background:#fff;border:1px solid var(--sand);border-radius:10px;margin-bottom:10px;overflow:hidden;border-left:4px solid var(--accent)}
+.client-le-app .phase-header{padding:14px 16px;display:flex;align-items:center;gap:10px}
+.client-le-app .phase-title{flex:1;font-size:14px;color:var(--ink);font-weight:600}
+.client-le-app .phase-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+.client-le-app .tasks-list{border-top:1px solid var(--sand)}
+.client-le-app .task-item{padding:11px 16px;border-bottom:1px solid var(--parchment);display:flex;gap:10px;align-items:flex-start}
+.client-le-app .task-item:last-child{border-bottom:none}
+.client-le-app .task-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.client-le-app .task-name{font-size:13px;color:var(--ink);line-height:1.4}
+.client-le-app .task-name.done{text-decoration:line-through;color:var(--mid)}
+.client-le-app .task-note{font-size:11px;color:var(--mid);font-style:italic;margin-top:2px}
+.client-le-app .task-status{font-size:10px;padding:3px 10px;border-radius:20px;white-space:nowrap;font-weight:600;margin-left:auto;flex-shrink:0}
+.client-le-app .cs-footer{text-align:center;padding:32px 20px;margin-top:8px}
+.client-le-app .cs-brand{font-family:Georgia,serif;font-style:italic;font-size:18px;color:var(--accent);margin-bottom:4px}
+.client-le-app .cs-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);opacity:.5}
+
+/* ══════════════ CLIENT · Nicole & Eduardo · SELVARA ══════════════ */
+.client-ne-app{background:#F4EDE9;color:#666B26;font-size:14px;min-height:100vh}
+.client-ne-app .header{background-size:cover;background-position:center;padding:32px 20px 28px;text-align:center;position:relative;overflow:hidden}
+.client-ne-app .header::before{content:'';position:absolute;width:400px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(232,98,58,.1) 0%,transparent 65%);top:-80px;right:-80px}
+.client-ne-app .header::after{content:'';position:absolute;width:280px;height:220px;border-radius:50%;background:radial-gradient(circle,rgba(74,138,42,.08) 0%,transparent 65%);bottom:-40px;left:-40px}
+.client-ne-app .header *{color:#fff!important}
+.client-ne-app .header-studio{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:#fff;margin-bottom:14px;position:relative}
+.client-ne-app .header-logo{width:100%;max-width:320px;height:auto;margin:0 auto 6px;display:block;position:relative;filter:drop-shadow(0 2px 10px rgba(0,0,0,.15))}
+.client-ne-app .header-tagline{font-size:12px;color:rgba(255,255,255,.85);font-style:italic;margin-bottom:6px;position:relative}
+.client-ne-app .header-lockup{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.85);line-height:2;position:relative}
+.client-ne-app .progress-big{margin:20px auto 0;max-width:260px;position:relative}
+.client-ne-app .progress-pct{font-size:36px;font-weight:900;color:#fff;line-height:1;text-align:center}
+.client-ne-app .progress-label{font-size:10px;color:#fff;text-align:center;margin-top:2px;margin-bottom:10px;letter-spacing:.1em;text-transform:uppercase}
+.client-ne-app .progress-track{height:5px;background:rgba(255,255,255,.3);border-radius:3px}
+.client-ne-app .progress-fill{height:100%;background:linear-gradient(90deg,#6B6B3A,#DA9A40,#D66677);border-radius:3px;transition:width .5s}
+.client-ne-app .countdown-strip{background:rgba(102,107,38,.06);border-top:1px solid rgba(102,107,38,.1);padding:10px 20px;text-align:center;font-size:13px;color:#888B40}
+.client-ne-app .countdown-strip strong{color:#DA9A40}
+.client-ne-app .content{padding:20px 16px 80px;max-width:600px;margin:0 auto}
+.client-ne-app .section-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:#D66677;font-weight:700;margin-bottom:10px;margin-top:20px;opacity:.85}
+.client-ne-app .phase{background:rgba(255,255,255,.7);border:1px solid rgba(102,107,38,.12);border-radius:10px;margin-bottom:10px;overflow:hidden;border-left:4px solid #DA9A40}
+.client-ne-app .phase-header{padding:14px 16px;display:flex;align-items:center;gap:10px}
+.client-ne-app .phase-title{flex:1;font-size:14px;color:#666B26;font-weight:600}
+.client-ne-app .phase-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+.client-ne-app .tasks-list{border-top:1px solid rgba(102,107,38,.1)}
+.client-ne-app .task-item{padding:11px 16px;border-bottom:1px solid rgba(102,107,38,.08);display:flex;gap:10px;align-items:flex-start}
+.client-ne-app .task-item:last-child{border-bottom:none}
+.client-ne-app .task-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.client-ne-app .task-name{font-size:13px;color:#666B26;line-height:1.4}
+.client-ne-app .task-name.done{text-decoration:line-through;color:#AAA860}
+.client-ne-app .task-note{font-size:11px;color:#AAA860;font-style:italic;margin-top:2px}
+.client-ne-app .task-status{font-size:10px;padding:3px 10px;border-radius:20px;white-space:nowrap;font-weight:600;margin-left:auto;flex-shrink:0}
+.client-ne-app .cs-footer{text-align:center;padding:32px 20px;margin-top:8px}
+.client-ne-app .cs-brand{font-family:Georgia,serif;font-style:italic;font-size:18px;color:#888B40;margin-bottom:4px}
+.client-ne-app .cs-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#888B40}

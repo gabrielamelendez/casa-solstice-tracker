@@ -96,7 +96,7 @@ export const PROJECTS = {
         { id: "ne2e", name: "Paleta día y noche aprobada", note: "Coral/mango/selva → negro/dorado/neón" },
         { id: "ne2f", name: "Aprobación sistema visual completo" },
       ]},
-      { id: "ne3", title: "Piezas de Papelería", clientTitle: "Piezas de papelería", emoji: "✏️", deadline: "Nov–Dic 2026", urgency: "normal", clientVisible: true, tasks: [
+      { id: "ne3", title: "Piezas de Papelería", clientTitle: "Piezas de papelería", emoji: "✏️", deadline: "Ene–Feb 2027", urgency: "normal", clientVisible: true, tasks: [
         { id: "ne3b", name: "⭐ Set de invitación completo", note: "Invitación + detalles + RSVP + belly band + sobre + liner" },
         { id: "ne3c", name: "Abanicos — diseño ambas caras", note: "220 unidades · 9×9 pulg." },
         { id: "ne3d", name: "Bar sign / menú del bar", note: "Con los Negronis de N+E" },

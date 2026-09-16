@@ -31,15 +31,17 @@ function ProjectCard({ meta, stats, accent, onOpen }) {
 }
 
 function StudioHome({ statuses, now, go }) {
-  const le = PROJECTS.le, ne = PROJECTS.ne;
+  const le = PROJECTS.le, ne = PROJECTS.ne, sj = PROJECTS.sj;
   const leDays = daysUntil(now, le.weddingDate);
   const neDays = daysUntil(now, ne.weddingDate);
+  const sjDays = daysUntil(now, sj.weddingDate);
   const leStats = phaseStats(le.phases, statuses);
   const neStats = phaseStats(ne.phases, statuses);
+  const sjStats = phaseStats(sj.phases, statuses);
 
   return (
     <div style={{ padding: "20px 16px 100px" }}>
-      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 10, marginBottom: 20 }}>
+      <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr 1fr", gap: 10, marginBottom: 20 }}>
         <div className="cd-card" style={{ background: "#89203B" }}>
           <div className="cd-name">Lynette & Eduardo</div>
           <div className="cd-days">{leDays}</div>
@@ -50,15 +52,22 @@ function StudioHome({ statuses, now, go }) {
           <div className="cd-days">{neDays}</div>
           <div className="cd-label">días · {ne.weddingDateLabel}</div>
         </div>
+        <div className="cd-card" style={{ background: "#7F843E" }}>
+          <div className="cd-name">Sarah & Juan</div>
+          <div className="cd-days">{sjDays}</div>
+          <div className="cd-label">días · {sj.weddingDateLabel}</div>
+        </div>
       </div>
       <div style={{ fontSize: 9, letterSpacing: ".28em", textTransform: "uppercase", color: "#C97080", marginBottom: 10, fontWeight: 700 }}>Proyectos activos</div>
       <ProjectCard meta={le} stats={leStats} accent="#89203B" onOpen={() => go("le")} />
       <ProjectCard meta={ne} stats={neStats} accent="#DA9A40" onOpen={() => go("ne")} />
+      <ProjectCard meta={sj} stats={sjStats} accent="#7F843E" onOpen={() => go("sj")} />
       <div className="reminder">
         <div className="reminder-label">⚡ Fechas límite de imprenta</div>
         <div className="reminder-body">
           <strong>L&E</strong> → archivos a imprenta antes del <strong>{le.printDeadlineLabel}</strong><br />
           <strong>N&E</strong> → archivos a imprenta antes del <strong>{ne.printDeadlineLabel}</strong><br />
+          <strong>S&J</strong> → archivos a imprenta antes del <strong>{sj.printDeadlineLabel}</strong><br />
           Aprobación final 4 semanas antes de cada fecha.
         </div>
       </div>
@@ -141,7 +150,7 @@ function StudioProject({ projId, statuses, setStatus, go }) {
             open={openPhases[ph.id] !== false} onToggle={() => togglePhase(ph.id)} />
         ))}
 
-        <a href={projId === "le" ? "/lynette-eduardo" : "/selvara"} target="_blank" rel="noreferrer"
+        <a href={projId === "le" ? "/lynette-eduardo" : projId === "ne" ? "/selvara" : "/sarah-juan"} target="_blank" rel="noreferrer"
           style={{ display: "block", textAlign: "center", marginTop: 20, background: meta.accent, color: "#fff", textDecoration: "none", borderRadius: 8, padding: "12px 14px", fontSize: 12, fontWeight: 700, letterSpacing: ".04em" }}>
           Ver vista del cliente →
         </a>

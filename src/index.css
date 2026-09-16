@@ -129,3 +129,39 @@ body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;-webkit-
 .client-ne-app .cs-footer{text-align:center;padding:32px 20px;margin-top:8px}
 .client-ne-app .cs-brand{font-family:Georgia,serif;font-style:italic;font-size:18px;color:#888B40;margin-bottom:4px}
 .client-ne-app .cs-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:#888B40}
+
+/* ══════════════ CLIENT · Sarah & Juan ══════════════ */
+.client-sj-app{
+  --accent:#7F843E;--parchment:#FAF5EE;--sand:#EDE0CE;--ink:#1E130C;--mid:#6B4E3D;
+  background:var(--parchment);color:var(--ink);font-size:14px;min-height:100vh;
+}
+.client-sj-app .header{background:var(--accent);padding:24px 20px 28px;text-align:center;position:relative;overflow:hidden}
+.client-sj-app .header::before{content:'';position:absolute;width:300px;height:250px;border-radius:50%;background:radial-gradient(circle,rgba(186,103,121,.18) 0%,transparent 65%);top:-80px;right:-60px}
+.client-sj-app .header-studio{font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:rgba(245,240,232,.45);margin-bottom:10px}
+.client-sj-app .header-names{font-family:Georgia,serif;font-style:italic;font-size:32px;color:#fff;line-height:1;margin-bottom:4px}
+.client-sj-app .header-concept{font-size:12px;color:rgba(245,240,232,.5);font-style:italic;margin-bottom:16px}
+.client-sj-app .header-date{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:rgba(245,240,232,.4)}
+.client-sj-app .progress-big{margin:16px auto 0;max-width:260px}
+.client-sj-app .progress-pct{font-size:36px;font-weight:900;color:#fff;line-height:1;text-align:center}
+.client-sj-app .progress-label{font-size:10px;color:rgba(245,240,232,.5);text-align:center;margin-top:2px;margin-bottom:10px;letter-spacing:.1em;text-transform:uppercase}
+.client-sj-app .progress-track{height:6px;background:rgba(255,255,255,.15);border-radius:3px}
+.client-sj-app .progress-fill{height:100%;background:#fff;border-radius:3px;transition:width .5s}
+.client-sj-app .countdown-strip{background:rgba(0,0,0,.15);padding:10px 20px;text-align:center;font-size:13px;color:rgba(245,240,232,.7)}
+.client-sj-app .countdown-strip strong{color:#fff}
+.client-sj-app .content{padding:20px 16px 80px;max-width:600px;margin:0 auto}
+.client-sj-app .section-label{font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:var(--accent);font-weight:700;margin-bottom:10px;margin-top:20px}
+.client-sj-app .phase{background:#fff;border:1px solid var(--sand);border-radius:10px;margin-bottom:10px;overflow:hidden;border-left:4px solid var(--accent)}
+.client-sj-app .phase-header{padding:14px 16px;display:flex;align-items:center;gap:10px}
+.client-sj-app .phase-title{flex:1;font-size:14px;color:var(--ink);font-weight:600}
+.client-sj-app .phase-badge{font-size:10px;font-weight:700;padding:3px 10px;border-radius:20px}
+.client-sj-app .tasks-list{border-top:1px solid var(--sand)}
+.client-sj-app .task-item{padding:11px 16px;border-bottom:1px solid var(--parchment);display:flex;gap:10px;align-items:flex-start}
+.client-sj-app .task-item:last-child{border-bottom:none}
+.client-sj-app .task-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;margin-top:3px}
+.client-sj-app .task-name{font-size:13px;color:var(--ink);line-height:1.4}
+.client-sj-app .task-name.done{text-decoration:line-through;color:var(--mid)}
+.client-sj-app .task-note{font-size:11px;color:var(--mid);font-style:italic;margin-top:2px}
+.client-sj-app .task-status{font-size:10px;padding:3px 10px;border-radius:20px;white-space:nowrap;font-weight:600;margin-left:auto;flex-shrink:0}
+.client-sj-app .cs-footer{text-align:center;padding:32px 20px;margin-top:8px}
+.client-sj-app .cs-brand{font-family:Georgia,serif;font-style:italic;font-size:18px;color:var(--accent);margin-bottom:4px}
+.client-sj-app .cs-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--mid);opacity:.5}

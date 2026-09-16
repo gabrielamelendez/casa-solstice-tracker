@@ -133,6 +133,53 @@ export const PROJECTS = {
       ]},
     ],
   },
+  sj: {
+    id: "sj",
+    name: "Sarah & Juan",
+    concept: "Entre Aquí y Allá · Between here and there, we made a life worth celebrating.",
+    weddingDateLabel: "21 Ago 2027",
+    weddingDate: "2027-08-21",
+    budget: "US$550 · Precio especial referido",
+    accent: "#7F843E",
+    printDeadlineLabel: "21 Jun 2027",
+    deliveryDeadlineLabel: "21 Jul 2027",
+    phases: [
+      { id: "sj1", title: "Brief & Kickoff", clientTitle: "Brief & Información inicial", emoji: "📋", deadline: "Oct 2026", urgency: "normal", clientVisible: true, tasks: [
+        { id: "sj1a", name: "Confirmar textos exactos — nombres, fecha, lugar", note: "Madrid · 21 agosto 2027" },
+        { id: "sj1b", name: "Confirmar cantidad de mesas", note: "Para los números de mesa" },
+        { id: "sj1c", name: "Confirmar ciudades para números de mesa", note: "Sugerencia de la propuesta: Madrid · Málaga · Santo Domingo" },
+        { id: "sj1d", name: "Confirmar textos del menú" },
+        { id: "sj1e", name: "Confirmar detalles del bar", note: "Para el Bar Sign" },
+      ]},
+      { id: "sj2", title: "Moodboard & Monograma", clientTitle: "Dirección creativa", emoji: "🌸", deadline: "Nov 2026", urgency: "normal", clientVisible: true, tasks: [
+        { id: "sj2a", name: "Moodboard final aprobado", note: "Festivo y familiar de RD + elegancia atemporal de España" },
+        { id: "sj2b", name: "Monograma S+J — opción A" },
+        { id: "sj2c", name: "Monograma S+J — opción B" },
+        { id: "sj2d", name: "Aprobación monograma con ilustración", note: "US$50" },
+        { id: "sj2e", name: "Aprobación paleta de colores", note: "Verde olivo · burdeos · rojo vino · light blue · rosa claro · rosa viejo" },
+      ]},
+      { id: "sj3", title: "Sistema de Ilustraciones", clientTitle: "Sistema de ilustraciones", emoji: "🌿", deadline: "Dic 2026", urgency: "normal", clientVisible: true, tasks: [
+        { id: "sj3a", name: "Ilustraciones originales — florales con acentos tropicales", note: "US$180" },
+        { id: "sj3b", name: "Aprobación sistema visual completo", note: "Paleta + tipografía + ilustraciones" },
+      ]},
+      { id: "sj4", title: "Diseño de Piezas", clientTitle: "Diseño de piezas", emoji: "✏️", deadline: "Ene–Mar 2027", urgency: "normal", clientVisible: true, tasks: [
+        { id: "sj4a", name: "⭐ Save the Date", note: "Digital · US$70 · primera pieza en salir" },
+        { id: "sj4b", name: "⭐ Invitación — pieza principal", note: "US$150 · dos rondas de revisión" },
+        { id: "sj4c", name: "Menú", note: "US$90" },
+        { id: "sj4d", name: "⭐ Seating Chart", note: "US$140 · gran formato floral" },
+        { id: "sj4e", name: "Números de mesa", note: "US$60 · nombradas con los lugares de su historia" },
+        { id: "sj4f", name: "Bar sign", note: "US$60" },
+      ]},
+      { id: "sj5", title: "Entrega Final & Impresión", clientTitle: "Entrega final", emoji: "📦", deadline: "May–Jul 2027", urgency: "urgent", clientVisible: true, tasks: [
+        { id: "sj5a", name: "Archivos finales en alta resolución", note: "Listos para imprimir" },
+        { id: "sj5b", name: "Aprobación final de Sarah + Juan" },
+        { id: "sj5c", name: "Cobro del saldo restante" },
+        { id: "sj5d", name: "Envío a imprenta", note: "Considerar tiempo de envío a Madrid · límite: 21 Jun 2027" },
+        { id: "sj5e", name: "Recepción y revisión de impresión" },
+        { id: "sj5f", name: "Entrega final", note: "Límite: 21 Jul 2027" },
+      ]},
+    ],
+  },
 };
 
 export function allTaskIds() {

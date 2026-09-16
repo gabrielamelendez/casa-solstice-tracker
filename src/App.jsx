@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StudioApp from "./components/StudioApp";
 import ClientLE from "./components/ClientLE";
 import ClientSelvara from "./components/ClientSelvara";
+import ClientSarahJuan from "./components/ClientSarahJuan";
 
 export default function App() {
   return (
@@ -10,6 +11,7 @@ export default function App() {
         <Route path="/" element={<StudioApp />} />
         <Route path="/lynette-eduardo" element={<ClientLE />} />
         <Route path="/selvara" element={<ClientSelvara />} />
+        <Route path="/sarah-juan" element={<ClientSarahJuan />} />
       </Routes>
     </BrowserRouter>
   );

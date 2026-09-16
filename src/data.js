@@ -75,7 +75,7 @@ export const PROJECTS = {
     concept: "First & Only Edition · 15 May 2027",
     weddingDateLabel: "15 May 2027",
     weddingDate: "2027-05-15",
-    budget: "US$900 · Founding Client",
+    budget: "US$662.75 · Founding Client",
     accent: "#DA9A40",
     accentDark: "#8A2644",
     printDeadlineLabel: "20 Feb 2027",
@@ -88,7 +88,7 @@ export const PROJECTS = {
         { id: "ne1d", name: "Confirmar textos — nombres, fecha, venue, hora" },
         { id: "ne1e", name: "Definir extras opcionales", note: "Merch station, wristbands, tattoos" },
       ]},
-      { id: "ne2", title: "Sistema de Identidad SELVARA", clientTitle: "Sistema de identidad SELVARA", emoji: "✦", deadline: "Oct 2026", urgency: "normal", clientVisible: true, tasks: [
+      { id: "ne2", title: "Sistema de Identidad SELVARA", clientTitle: "Sistema de identidad SELVARA", emoji: "✦", deadline: "Nov–Dic 2026", urgency: "normal", clientVisible: true, tasks: [
         { id: "ne2a", name: "Moodboard SELVARA aprobado", note: "Tropical × Disco × Festival × Editorial" },
         { id: "ne2b", name: "Monograma N+E festival style aprobado", note: "No tradicional" },
         { id: "ne2c", name: "Sistema de ilustraciones tropicales", note: "Heliconias, anturios, aves del paraíso" },
@@ -97,7 +97,6 @@ export const PROJECTS = {
         { id: "ne2f", name: "Aprobación sistema visual completo" },
       ]},
       { id: "ne3", title: "Piezas de Papelería", clientTitle: "Piezas de papelería", emoji: "✏️", deadline: "Nov–Dic 2026", urgency: "normal", clientVisible: true, tasks: [
-        { id: "ne3a", name: "⭐ Save the Date digital", note: "Primera expresión de SELVARA" },
         { id: "ne3b", name: "⭐ Set de invitación completo", note: "Invitación + detalles + RSVP + belly band + sobre + liner" },
         { id: "ne3c", name: "Abanicos — diseño ambas caras", note: "220 unidades · 9×9 pulg." },
         { id: "ne3d", name: "Bar sign / menú del bar", note: "Con los Negronis de N+E" },

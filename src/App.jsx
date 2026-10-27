@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
 import StudioApp from "./components/StudioApp";
 import ClientLE from "./components/ClientLE";
 import ClientSelvara from "./components/ClientSelvara";
@@ -19,7 +19,11 @@ const TRACKERS = {
 function PortalRoute({ page }) {
   const { slug } = useParams();
   const portal = PORTALS[slug];
-  if (!portal) return <Navigate to="/" replace />;
+  if (!portal) return (
+    <div style={{ minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", background: "#FAF5EE", fontFamily: "Georgia, serif", fontStyle: "italic", color: "#5C1A1A", fontSize: 22 }}>
+      Página no encontrada
+    </div>
+  );
   if (page === "invitados") return <GuestList portal={portal} />;
   if (page === "mesas") return <Seating portal={portal} />;
   if (page === "rsvp") return <Rsvp portal={portal} />;

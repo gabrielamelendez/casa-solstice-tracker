@@ -101,6 +101,18 @@ Sin esas variables configuradas en el hosting, el sitio desplegado sigue
 funcionando pero en modo local — cada visitante ve solo su propio progreso
 guardado en su navegador, sin sincronizar entre sí.
 
+## Contraseña del Studio Tracker
+
+La página principal (`/`) pide contraseña; los portales de clientes y los links de RSVP
+no. La revisa `middleware.js` en el servidor de Vercel.
+
+- En Vercel → Project Settings → Environment Variables agrega `STUDIO_PASSWORD` con tu
+  contraseña (Production) y vuelve a publicar (Deployments → ⋯ → Redeploy).
+- El dispositivo queda recordado 90 días. Para cerrar sesión abre `/?salir`.
+- Para cambiar la contraseña, cambia la variable y vuelve a publicar: todos los
+  dispositivos tendrán que entrar de nuevo.
+- En local (`npm run dev`) no se pide contraseña.
+
 ## Nota de seguridad
 
 **Invitados:** la lista de invitados usa el mismo modelo sin login. El link de RSVP

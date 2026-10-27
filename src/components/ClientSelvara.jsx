@@ -1,6 +1,8 @@
 import { PROJECTS } from "../data";
 import { useTaskStatuses } from "../lib/taskStore";
 import { useNow, daysUntil, phaseStats } from "./shared";
+import { PortalTabs } from "./portal/PortalShell";
+import { PORTALS } from "../portals";
 
 const SEL_STYLE = {
   "Pendiente": { bg: "rgba(102,107,38,.08)", color: "#888B40", dot: "rgba(102,107,38,.25)" },
@@ -31,6 +33,7 @@ export default function ClientSelvara() {
         </div>
       </div>
       <div className="countdown-strip"><strong>{days} días</strong> para SELVARA · 15 de mayo de 2027</div>
+      <PortalTabs portal={PORTALS["selvara"]} />
       <div className="content">
         <div className="section-label">Estado de cada fase</div>
         <div>

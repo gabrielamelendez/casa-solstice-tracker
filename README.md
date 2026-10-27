@@ -1,10 +1,37 @@
 # Casa Solstice · Tracker
 
-React + Vite + Tailwind + Supabase. Three routes:
+React + Vite + Tailwind + Supabase.
 
 - `/` — Studio Tracker (interno, editable)
-- `/lynette-eduardo` — tracker de cliente L&E (solo lectura, tiempo real)
-- `/selvara` — tracker de cliente SELVARA (solo lectura, tiempo real)
+- `/<cliente>` — portal del cliente, pestaña **Papelería** (tracker, solo lectura, tiempo real)
+- `/<cliente>/invitados` — **Lista de invitados** (la editan los novios)
+- `/<cliente>/mesas` — **Organizador de mesas**
+- `/<cliente>/rsvp` — **Link público de RSVP** para los invitados
+
+Clientes: `lynette-eduardo`, `selvara`, `sarah-juan`, y `plantilla` (portal de muestra
+con botones para cargar invitados y mesas de ejemplo).
+
+## Portal de cliente: invitados, RSVP y mesas
+
+**Activar en Supabase (una sola vez):** SQL Editor → New query → pega todo
+[`supabase/portal.sql`](supabase/portal.sql) → Run. Crea las tablas `guests` y
+`seating_tables` con Realtime. No toca `task_status`.
+
+**Cómo se usa**
+- Los novios agregan invitados en `/<cliente>/invitados`, uno a uno o pegando una
+  lista (`Nombre, cupos, grupo` por línea, sirve copiar desde Excel). Una fila =
+  una invitación; "cupos" = cuántas personas incluye.
+- Comparten el link `/<cliente>/rsvp` (botón Copiar o WhatsApp). El invitado escribe
+  su nombre (mínimo 3 letras, sin importar tildes), elige su invitación, confirma
+  cuántos van, alergias y un mensaje. Solo ve los nombres que coinciden con lo que escribe.
+- En `/<cliente>/mesas` crean mesas (redonda/imperial, 2–24 sillas) y sientan a los
+  confirmados: tocar invitado → "Sentar aquí" en el celular, o arrastrar en computadora.
+  Cada invitación ocupa los asientos que confirmó.
+- Exportar CSV en la lista de invitados (abre en Excel/Sheets).
+
+**Nuevo cliente:** en [`src/portals.js`](src/portals.js) copia el bloque `plantilla`,
+cambia `slug`, `project`, textos y colores. Para que su tracker de papelería se edite
+desde el Studio, agrega su proyecto en `src/data.js` y en `StudioApp.jsx` como los otros.
 
 ## 1. Correr localmente sin Supabase (ya funciona así)
 
@@ -75,6 +102,12 @@ funcionando pero en modo local — cada visitante ve solo su propio progreso
 guardado en su navegador, sin sincronizar entre sí.
 
 ## Nota de seguridad
+
+**Invitados:** la lista de invitados usa el mismo modelo sin login. El link de RSVP
+solo muestra los nombres que coinciden con la búsqueda, pero alguien con conocimientos
+técnicos y la clave pública podría leer o editar la tabla `guests` completa (nombres,
+alergias, mensajes). Si los clientes lo piden, el siguiente paso es Supabase Auth para
+los novios y una función de Supabase para el RSVP.
 
 No hay login: el Studio Tracker y los dos trackers de cliente usan la misma
 clave pública (`anon key`), diferenciados solo por la ruta. Las políticas de

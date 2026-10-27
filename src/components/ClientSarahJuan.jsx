@@ -1,6 +1,8 @@
 import { PROJECTS } from "../data";
 import { useTaskStatuses } from "../lib/taskStore";
 import { TaskDot, StatusPill, useNow, daysUntil, phaseStats } from "./shared";
+import { PortalTabs } from "./portal/PortalShell";
+import { PORTALS } from "../portals";
 
 export default function ClientSarahJuan() {
   const { statuses } = useTaskStatuses();
@@ -24,6 +26,7 @@ export default function ClientSarahJuan() {
         </div>
       </div>
       <div className="countdown-strip"><strong>{days} días</strong> para la boda · 21 de agosto de 2027</div>
+      <PortalTabs portal={PORTALS["sarah-juan"]} />
       <div className="content">
         <div className="section-label">Estado de cada fase</div>
         <div>

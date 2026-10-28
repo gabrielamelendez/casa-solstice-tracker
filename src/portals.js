@@ -16,9 +16,30 @@ export const PORTALS = {
     tagline: "A Table for Two · Wherever we are, we're home.",
     dateLabel: "20 de marzo de 2027",
     weddingDate: "2027-03-20",
-    rsvpBy: "",
+    rsvpBy: "10 de febrero, 2027",
     tableHint: "Ej. Roma, París, Madrid…",
     theme: { accent: "#89203B", onAccent: "#FFFFFF", bg: "#FAF5EE", card: "#FFFFFF", ink: "#1E130C", mid: "#6B4E3D", line: "#EDE0CE", soft: "#F3E6E0" },
+    // RSVP público con el diseño de la web de L&E (ver components/portal/LeRsvpShell.jsx).
+    rsvpLayout: "le",
+    rsvpCopy: {
+      title: "Confirma tu asistencia",
+      lead: "Escribe tu nombre o apellido como aparece en tu invitación para confirmar que serás parte de este comienzo.",
+      yes: "Sí, ahí estaré",
+      no: "Con pena, no podré",
+      doneYes: "¡Gracias por confirmar!",
+      doneNo: "Gracias por avisarnos",
+    },
+    event: {
+      dateLong: "Sábado 20 de marzo, 2027",
+      time: "6:00 PM",
+      venue: "Casa de España · Salón Terraza del Mar",
+      city: "Santo Domingo, República Dominicana",
+      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Casa+de+Espa%C3%B1a+Santo+Domingo",
+      start: "20270320T220000Z", // 6:00 PM en RD (UTC-4)
+      end: "20270321T060000Z",   // 2:00 AM
+      dressCode: "Formal · vestido largo para las damas, saco para los caballeros",
+      phone: "809-962-6618",
+    },
   },
   selvara: {
     slug: "selvara",

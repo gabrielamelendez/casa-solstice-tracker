@@ -187,6 +187,12 @@ span.rsvp-pill{cursor:default}
 .rsvp-submit{width:100%;min-height:50px;font-size:15px;margin-top:4px}
 .rsvp-done{text-align:center}
 .rsvp-mark{font-size:28px;color:var(--p-accent);margin-bottom:6px}
+.rsvp-event{margin:0 0 16px;text-align:left}
+.rsvp-event>div{padding:8px 0;border-bottom:1px solid var(--p-line)}
+.rsvp-event dt{font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--p-mid);font-weight:700}
+.rsvp-event dd{margin:2px 0 0}
+.rsvp-actions{display:grid;gap:8px;margin-bottom:12px}
+.rsvp-change{background:none;border:none;color:var(--p-mid);text-decoration:underline;cursor:pointer;font-size:13px}
 
 /* Footer */
 .portal-footer{text-align:center;padding:28px 20px 36px}

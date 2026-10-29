@@ -6,6 +6,7 @@ import "@fontsource/cormorant-garamond/500-italic.css";
 import "@fontsource/cormorant-garamond/600.css";
 import "@fontsource/cormorant-garamond/600-italic.css";
 import "./le-web.css";
+import { weddingSlug } from "../../weddingHost";
 
 // Lynette & Eduardo · wedding website, built from Gaby's Figma ("Website L&E").
 // Content (dates, venue, links) comes from the L&E entry in portals.js.
@@ -55,8 +56,13 @@ const pad = n => String(n).padStart(2, "0");
 // public/assets/le/web/galeria/ y añádelas aquí. "pos" = qué parte de la foto
 // se mantiene visible dentro del marco (ej. "50% 30%").
 const GALLERY = [
-  { src: `${A}/foto-momentos.webp`, alt: "Lynette y Eduardo", pos: "50% 30%" },
-  { src: `${A}/foto-cuenta.webp`, alt: "Lynette y Eduardo frente a una reja de hierro", pos: "50% 45%" },
+  { src: `${A}/galeria/01.webp`, alt: "Lynette y Eduardo se miran sonriendo", pos: "50% 35%" },
+  { src: `${A}/galeria/02.webp`, alt: "Lynette y Eduardo abrazados frente a una puerta", pos: "50% 50%" },
+  { src: `${A}/galeria/03.webp`, alt: "Lynette y Eduardo junto a una pared amarilla", pos: "50% 60%" },
+  { src: `${A}/galeria/04.webp`, alt: "Lynette y Eduardo en una calle de la Zona Colonial", pos: "50% 60%" },
+  { src: `${A}/galeria/05.webp`, alt: "Lynette y Eduardo abrazados frente a una puerta gris", pos: "50% 45%" },
+  { src: `${A}/galeria/06.webp`, alt: "Lynette y Eduardo sonriendo frente a una pared", pos: "50% 40%" },
+  { src: `${A}/galeria/07.webp`, alt: "Eduardo levanta a Lynette en un abrazo", pos: "50% 50%" },
 ];
 const GALLERY_MS = 4500;
 
@@ -117,7 +123,7 @@ function Intro({ onOpen }) {
 
 export default function LeWedding({ portal }) {
   const ev = portal.event || {};
-  const rsvpHref = `/${portal.slug}/rsvp`;
+  const rsvpHref = weddingSlug ? "/rsvp" : `/${portal.slug}/rsvp`;
   const wa = ev.phone ? `https://wa.me/1${ev.phone.replace(/\D/g, "")}` : null;
   const [opened, setOpened] = useState(readOpened);
   const rootRef = useRef(null);

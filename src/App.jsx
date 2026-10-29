@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, useParams } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, useParams } from "react-router-dom";
 import StudioApp from "./components/StudioApp";
 import ClientLE from "./components/ClientLE";
 import ClientSelvara from "./components/ClientSelvara";
@@ -10,6 +10,7 @@ import TemplateTracker from "./components/portal/TemplateTracker";
 import LeWedding from "./components/le-web/LeWedding";
 import LeCountdown from "./components/le-web/LeCountdown";
 import { PORTALS } from "./portals";
+import { weddingSlug } from "./weddingHost";
 
 // Papelería tab per portal: the existing bespoke trackers, or the template one.
 const TRACKERS = {
@@ -39,7 +40,22 @@ function PortalRoute({ page }) {
   return Tracker ? <Tracker /> : <TemplateTracker portal={portal} />;
 }
 
+function WeddingSite({ slug }) {
+  const portal = PORTALS[slug];
+  return (
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<LeWedding portal={portal} />} />
+        <Route path="/rsvp" element={<Rsvp portal={portal} />} />
+        <Route path="/cuenta-regresiva" element={<LeCountdown />} />
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
 export default function App() {
+  if (weddingSlug && PORTALS[weddingSlug]) return <WeddingSite slug={weddingSlug} />;
   return (
     <BrowserRouter>
       <Routes>

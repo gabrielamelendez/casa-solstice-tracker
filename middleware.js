@@ -59,7 +59,11 @@ button{width:100%;font-size:15px;font-weight:600;padding:13px;border:none;border
   });
 }
 
+// Wedding-site domains (aliases of this project) show the couple's site at "/", no password.
+const PUBLIC_HOSTS = ["lynetteandeduardo.vercel.app", "lynetteyeduardo.vercel.app"];
+
 export default async function middleware(request) {
+  if (PUBLIC_HOSTS.includes(new URL(request.url).hostname)) return next();
   const password = process.env.STUDIO_PASSWORD;
   if (!password) return page({ missing: true });
 

@@ -49,7 +49,7 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-intro.opening{opacity:0;visibility:hidden}
 
 /* ───────── HERO (desktop: 1920×1081 stage, positions from the Figma) ───────── */
-.lw-hero{position:relative;z-index:2;background:#EFD9D7 url("/assets/le/web/fondo-hero.webp") center/cover no-repeat}
+.lw-hero{position:relative;z-index:2;overflow:visible;background:#EFD9D7 url("/assets/le/web/fondo-hero.webp") center/cover no-repeat}
 .lw-hero-stage{position:relative;width:100%;max-width:1920px;margin:0 auto;aspect-ratio:1920/1081;container-type:inline-size}
 .lw-h{position:absolute;height:auto}
 .lw-h img,.lw-h{height:auto}
@@ -57,7 +57,9 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-h-envelope{left:16.35%;top:4.26%;width:48.85%}
 .lw-card{left:44.27%;top:20.72%;width:29.69%;container-type:inline-size}
 .lw-card>img{width:100%;height:auto;filter:drop-shadow(0 10px 22px rgba(90,20,40,.18))}
-.lw-h-dahlia{left:66%;top:68%;width:15%;filter:drop-shadow(0 8px 14px rgba(90,20,40,.22))}
+.lw-card{z-index:2}
+.lw-tag{z-index:3}
+.lw-h-dahlia{z-index:1;left:65.5%;top:75.5%;width:18%;filter:drop-shadow(0 8px 14px rgba(90,20,40,.22))}
 .lw-tag{container-type:inline-size}
 .lw-tag>img{width:100%;height:auto;filter:drop-shadow(0 10px 16px rgba(60,30,10,.2))}
 .lw-tag-rsvp{left:33.23%;top:47.36%;width:18.23%}
@@ -139,10 +141,10 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-count-num{font-family:'Hanoman',serif;font-size:clamp(56px,11vw,212px);line-height:.95;font-variant-numeric:tabular-nums}
 .lw-count-label{font-size:clamp(16px,2.5vw,48px);line-height:1}
 .lw-count-stamps{position:absolute;right:0;bottom:-6.4vw;width:18.4vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));z-index:3}
-.lw-count-flower{position:absolute;left:0;top:-5.6vw;width:18.9vw;height:auto;filter:drop-shadow(0 8px 14px rgba(40,10,18,.3));z-index:3;pointer-events:none}
+.lw-count-flower{position:absolute;left:-6.1vw;top:-5.7vw;width:18.5vw;height:auto;filter:drop-shadow(0 8px 14px rgba(40,10,18,.3));z-index:3;pointer-events:none}
 
 /* Los momentos */
-.lw-moments{position:relative;background:var(--grain),#FFE8EE;padding:clamp(64px,8vw,150px) 0 clamp(64px,8vw,150px)}
+.lw-moments{position:relative;background:#F1DEDB url("/assets/le/web/fondo-momentos.webp") center/cover no-repeat;padding:clamp(64px,8vw,150px) 0 clamp(64px,8vw,150px)}
 .lw-moments-inner{max-width:1420px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,586fr) minmax(0,700fr);gap:clamp(28px,5vw,96px);align-items:center}
 .lw-frame{position:relative;width:100%;max-width:586px;justify-self:end;aspect-ratio:690/902}
 .lw-gallery{position:absolute;left:17.9%;top:14.6%;width:63.6%;height:61.4%;overflow:hidden;background:#d9b9c0}
@@ -153,8 +155,8 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-gallery-dots button.on{background:var(--wine2)}
 .lw-frame-border{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;filter:drop-shadow(0 8px 14px rgba(90,20,40,.14))}
 .lw-moments-text{display:flex;flex-direction:column;align-items:flex-start}
-.lw-moments-title{font-family:'Hanoman',serif;font-weight:400;text-transform:uppercase;color:var(--wine2);font-size:clamp(46px,5.2vw,100px);line-height:.95;margin:0}
-.lw-moments-sub{font-style:italic;font-size:clamp(22px,2.1vw,40px);color:var(--wine2);margin-top:2px}
+.lw-moments-title{font-family:'Hanoman',serif;font-weight:400;text-transform:uppercase;color:#8E2340;font-size:clamp(48px,5.4vw,104px);line-height:.9;letter-spacing:.012em;margin:0}
+.lw .lw-moments-sub{font-style:italic;font-weight:500;font-size:clamp(24px,2.45vw,47px);line-height:1;color:var(--wine2);margin-top:.02em;padding-left:.06em}
 .lw-timeline{list-style:none;margin:clamp(14px,2vw,30px) 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(10px,1.3vw,18px)}
 .lw-timeline li{display:grid;grid-template-columns:clamp(96px,9.3vw,178px) 1fr;align-items:center}
 .lw-tl-time{font-size:clamp(20px,2vw,38px);color:var(--wine2);text-align:right;padding-right:clamp(12px,1.4vw,26px);white-space:nowrap}

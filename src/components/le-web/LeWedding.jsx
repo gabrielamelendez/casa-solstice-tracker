@@ -155,7 +155,7 @@ export default function LeWedding({ portal }) {
           <img className="lw-rama-arriba lw-m-only" src={`${A}/rama-m-arriba.webp`} alt="" aria-hidden="true" width="439" height="395" loading="lazy" />
           <img className="lw-rama-abajo lw-d-only" src={`${A}/rama-abajo.webp`} alt="" aria-hidden="true" width="1212" height="1254" />
           <img className="lw-rama-abajo lw-m-only" src={`${A}/rama-m-abajo.webp`} alt="" aria-hidden="true" width="458" height="413" loading="lazy" />
-          <img className="lw-h lw-h-stamps" src={`${A}/sellos-blancos.webp`} alt="" aria-hidden="true" />
+          <img className="lw-h lw-h-stamps" src={`${A}/sellos-sepia.webp`} alt="" aria-hidden="true" width="783" height="728" />
           <img className="lw-h lw-h-envelope" src={`${A}/sobre-abierto.webp`} alt="" aria-hidden="true" />
 
           <div className="lw-h lw-card">
@@ -253,7 +253,7 @@ export default function LeWedding({ portal }) {
             ))}
           </div>
         </div>
-        <img className="lw-count-stamps" src={`${A}/sellos-blancos.webp`} alt="" aria-hidden="true" />
+        <img className="lw-count-stamps" src={`${A}/sellos-color.webp`} alt="" aria-hidden="true" width="783" height="728" />
       </section>
 
       {/* LOS MOMENTOS */}

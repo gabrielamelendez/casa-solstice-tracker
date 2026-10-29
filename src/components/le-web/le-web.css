@@ -53,7 +53,7 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-hero-stage{position:relative;width:100%;max-width:1920px;margin:0 auto;aspect-ratio:1920/1081;container-type:inline-size}
 .lw-h{position:absolute;height:auto}
 .lw-h img,.lw-h{height:auto}
-.lw-h-stamps{left:9.48%;top:17.2%;width:18.5%;transform:rotate(-2deg)}
+.lw-h-stamps{left:8.6%;top:18.5%;width:18.5%;filter:drop-shadow(0 8px 12px rgba(60,20,30,.22))}
 .lw-h-envelope{left:16.35%;top:4.26%;width:48.85%}
 .lw-card{left:44.27%;top:20.72%;width:29.69%;container-type:inline-size}
 .lw-card>img{width:100%;height:auto;filter:drop-shadow(0 10px 22px rgba(90,20,40,.18))}
@@ -140,7 +140,7 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-count-cell{display:flex;flex-direction:column;align-items:center}
 .lw-count-num{font-family:'Hanoman',serif;font-size:clamp(56px,11vw,212px);line-height:.95;font-variant-numeric:tabular-nums}
 .lw-count-label{font-size:clamp(16px,2.5vw,48px);line-height:1}
-.lw-count-stamps{position:absolute;right:0;bottom:-6.4vw;width:18.4vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));z-index:3}
+.lw-count-stamps{position:absolute;right:-1.2vw;bottom:-9vw;width:20vw;height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));z-index:3}
 .lw-count-flower{position:absolute;left:-6.1vw;top:-5.7vw;width:18.5vw;height:auto;filter:drop-shadow(0 8px 14px rgba(40,10,18,.3));z-index:3;pointer-events:none}
 
 /* Los momentos */
@@ -207,12 +207,12 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 
   /* Hero: 393×679 */
   .lw .lw-hero-stage{aspect-ratio:auto;height:calc(679*var(--u))}
-  .lw .lw-h-stamps{left:calc(40.9*var(--u));top:calc(61.6*var(--u));width:calc(112.5*var(--u));transform:none}
+  .lw .lw-h-stamps{left:calc(30*var(--u));top:calc(62*var(--u));width:calc(110*var(--u));transform:none}
   .lw .lw-h-envelope{left:calc(65.9*var(--u));top:calc(67.3*var(--u));width:calc(282.8*var(--u))}
   .lw .lw-card{left:calc(95.2*var(--u));top:calc(243.8*var(--u));width:calc(201.7*var(--u))}
   .lw .lw-tag-rsvp{left:calc(227.2*var(--u));top:calc(151.7*var(--u));width:calc(141.5*var(--u));transform:none}
-  .lw .lw-tag-gifts{left:calc(31.8*var(--u));top:calc(433.2*var(--u));width:calc(154*var(--u));transform:none;z-index:4}
-  .lw .lw-h-dahlia{left:calc(233.4*var(--u));top:calc(473*var(--u));width:calc(115.2*var(--u));rotate:142deg;z-index:1}
+  .lw .lw-tag-gifts{left:calc(19.4*var(--u));top:calc(440.2*var(--u));width:calc(147.7*var(--u));transform:none;z-index:4}
+  .lw .lw-h-dahlia{left:calc(248*var(--u));top:calc(468.6*var(--u));width:calc(112*var(--u));rotate:142deg;z-index:1}
   .lw .lw-rama-arriba{left:calc(253.9*var(--u));top:calc(27.4*var(--u));width:calc(139*var(--u));right:auto}
   .lw .lw-rama-abajo.lw-m-only{left:0;top:calc(609.3*var(--u));bottom:auto;width:calc(145*var(--u))}
   /* tag texts (sizes in % of the tag width) */
@@ -262,7 +262,7 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
   .lw .lw-count-grid{position:absolute;left:calc(100*var(--u));width:calc(192*var(--u));top:calc(57*var(--u));margin:0;grid-template-columns:repeat(2,1fr);row-gap:calc(12.8*var(--u))}
   .lw .lw-count-num{font-size:calc(56*var(--u));line-height:1}
   .lw .lw-count-label{font-size:calc(13*var(--u));line-height:1.211;margin-top:calc(-11.5*var(--u))}
-  .lw .lw-count-stamps{left:calc(275.6*var(--u));right:auto;top:calc(164.8*var(--u));bottom:auto;width:calc(144.4*var(--u))}
+  .lw .lw-count-stamps{left:calc(265*var(--u));right:auto;top:calc(150*var(--u));bottom:auto;width:calc(140*var(--u))}
   .lw .lw-count-flower{left:calc(-38*var(--u));top:calc(-49*var(--u));width:calc(104*var(--u));rotate:23deg}
 
   /* Los momentos: 393×597 */

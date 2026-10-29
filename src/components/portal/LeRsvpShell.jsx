@@ -9,11 +9,11 @@ import "./le-rsvp.css";
 
 // Frame for the L&E public RSVP, matching their wedding website
 // (Figma "Website L&E"): vino #662030 / #93253F, rosa #FFE5EB / #EAB8BF,
-// oliva #585816, Cormorant Garamond, hand-drawn vines, dahlia and the RSVP tag.
+// oliva #585816, Cormorant Garamond, and the tone-on-tone floral line drawing.
 
 const A = "/assets/le";
 
-export default function LeRsvpShell({ portal, step, children }) {
+export default function LeRsvpShell({ portal, children }) {
   useEffect(() => {
     const prev = document.title;
     document.title = `RSVP · ${portal.names}`;
@@ -26,8 +26,8 @@ export default function LeRsvpShell({ portal, step, children }) {
   return (
     <div className="portal rsvp-le">
       <header className="le-head">
-        <img className="le-vine le-vine-l" src={`${A}/enredadera.png`} alt="" aria-hidden="true" />
-        <img className="le-vine le-vine-r" src={`${A}/enredadera.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-l" src={`${A}/flores.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-r" src={`${A}/flores.png`} alt="" aria-hidden="true" />
         <p className="le-kicker">Nos vamos a casar</p>
         <h1 className="le-names">
           <img src={`${A}/firma.png`} alt={portal.names} width="673" height="121" />
@@ -36,16 +36,12 @@ export default function LeRsvpShell({ portal, step, children }) {
       </header>
 
       <main className="le-main">
-        <div className={"le-ornament" + (step === "search" ? "" : " small")} aria-hidden="true">
-          <img className="le-tag" src={`${A}/rsvp-tag.png`} alt="" width="350" height="548" />
-          <img className="le-dahlia" src={`${A}/dalia.png`} alt="" width="410" height="397" />
-        </div>
         <div className="le-card-wrap">{children}</div>
       </main>
 
       <footer className="le-foot">
-        <img className="le-vine le-vine-bl" src={`${A}/enredadera.png`} alt="" aria-hidden="true" />
-        <img className="le-vine le-vine-br" src={`${A}/enredadera.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-l" src={`${A}/flores.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-r" src={`${A}/flores.png`} alt="" aria-hidden="true" />
         <p className="le-kicker">Con amor,</p>
         <img className="le-foot-names" src={`${A}/firma.png`} alt={portal.names} width="673" height="121" />
         {ev.phone && (

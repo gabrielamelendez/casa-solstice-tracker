@@ -1,3 +1,6 @@
+/* Hanoman Thin (archivo de Gaby, Setara Langit) para los nombres del encabezado */
+@font-face{font-family:'Hanoman';src:url('/fonts/le/hanoman-thin.woff2') format('woff2');font-weight:100 400;font-style:normal;font-display:swap}
+
 /* L&E · RSVP público con el diseño de su web (Figma "Website L&E") */
 .rsvp-le{
   --wine:#662030; --wine2:#93253F; --rose:#FFE5EB; --rose2:#EAB8BF;
@@ -14,8 +17,7 @@
 .rsvp-le .le-head{position:relative;overflow:hidden;text-align:center;color:var(--blush);
   background:var(--grain),var(--wine);padding:52px 20px 96px}
 .rsvp-le .le-kicker{font-style:italic;font-weight:500;font-size:24px;margin:0 0 6px;color:var(--blush);position:relative}
-.rsvp-le .le-names{margin:0 auto 14px;position:relative;line-height:0}
-.rsvp-le .le-names img{display:block;margin:0 auto;width:min(88%,460px);height:auto}
+.rsvp-le .le-names{margin:4px auto 16px;position:relative;font-family:'Hanoman','Cormorant Garamond',serif !important;font-weight:400;font-size:clamp(40px,11vw,76px);line-height:1;letter-spacing:.02em;color:var(--blush)}
 .rsvp-le .le-date{margin:0;font-size:13px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;position:relative}
 
 /* Tone-on-tone floral line drawing (from the website intro) */

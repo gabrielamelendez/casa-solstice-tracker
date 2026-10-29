@@ -29,9 +29,7 @@ export default function LeRsvpShell({ portal, children }) {
         <img className="le-flores le-flores-l" src={`${A}/flores.png`} alt="" aria-hidden="true" />
         <img className="le-flores le-flores-r" src={`${A}/flores.png`} alt="" aria-hidden="true" />
         <p className="le-kicker">Nos vamos a casar</p>
-        <h1 className="le-names">
-          <img src={`${A}/firma.png`} alt={portal.names} width="673" height="121" />
-        </h1>
+        <h1 className="le-names">{portal.names.toUpperCase()}</h1>
         <p className="le-date">{ev.dateLong || portal.dateLabel}{ev.time ? ` · ${ev.time}` : ""}</p>
       </header>
 

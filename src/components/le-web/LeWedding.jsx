@@ -51,6 +51,45 @@ function useReveal(rootRef, active) {
 
 const pad = n => String(n).padStart(2, "0");
 
+// Fotos de la galería (sección "Los momentos"). Para agregar más: súbelas a
+// public/assets/le/web/galeria/ y añádelas aquí. "pos" = qué parte de la foto
+// se mantiene visible dentro del marco (ej. "50% 30%").
+const GALLERY = [
+  { src: `${A}/foto-momentos.webp`, alt: "Lynette y Eduardo", pos: "50% 30%" },
+  { src: `${A}/foto-cuenta.webp`, alt: "Lynette y Eduardo frente a una reja de hierro", pos: "50% 45%" },
+];
+const GALLERY_MS = 4500;
+
+function Gallery({ photos }) {
+  const [i, setI] = useState(0);
+  const [paused, setPaused] = useState(false);
+  useEffect(() => {
+    if (photos.length < 2 || paused) return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => setI(n => (n + 1) % photos.length), GALLERY_MS);
+    return () => clearInterval(id);
+  }, [photos.length, paused]);
+  return (
+    <div className="lw-frame" data-reveal onMouseEnter={() => setPaused(true)} onMouseLeave={() => setPaused(false)}>
+      <img className="lw-frame-border" src={`${A}/marco-rosado.webp`} alt="" aria-hidden="true" />
+      <div className="lw-gallery" aria-roledescription="galería" aria-label="Fotos de Lynette y Eduardo">
+        {photos.map((p, n) => (
+          <img key={p.src} className={"lw-gallery-photo" + (n === i ? " on" : "")} src={p.src} alt={n === i ? p.alt : ""}
+            aria-hidden={n !== i} style={{ objectPosition: p.pos }} loading={n === 0 ? "eager" : "lazy"} />
+        ))}
+      </div>
+      {photos.length > 1 && (
+        <div className="lw-gallery-dots">
+          {photos.map((p, n) => (
+            <button key={p.src} type="button" className={n === i ? "on" : ""} aria-label={`Ver foto ${n + 1} de ${photos.length}`}
+              aria-current={n === i} onClick={() => setI(n)} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
+
 function Intro({ onOpen }) {
   const [opening, setOpening] = useState(false);
   const open = () => {
@@ -106,24 +145,20 @@ export default function LeWedding({ portal }) {
       {/* HERO — the invitation suite */}
       <header className="lw-hero">
         <div className="lw-hero-stage">
-          <img className="lw-hero-vine" src={`${A}/enredadera.webp`} alt="" aria-hidden="true" />
+          <img className="lw-rama-arriba" src={`${A}/rama-arriba.webp`} alt="" aria-hidden="true" width="934" height="680" />
+          <img className="lw-rama-abajo" src={`${A}/rama-abajo.webp`} alt="" aria-hidden="true" width="1212" height="1254" />
           <img className="lw-h lw-h-stamps" src={`${A}/sellos-blancos.webp`} alt="" aria-hidden="true" />
           <img className="lw-h lw-h-envelope" src={`${A}/sobre-abierto.webp`} alt="" aria-hidden="true" />
 
           <div className="lw-h lw-card">
-            <img src={`${A}/invitacion.webp`} alt="" aria-hidden="true" />
-            <div className="lw-card-text">
-              <p className="lw-card-small">Con la bendición de Dios y de nuestros padres, nosotros</p>
-              <h1 className="lw-card-names">
-                <span>Lynette</span><span className="lw-amp">&amp;</span><span>Eduardo</span>
-              </h1>
-              <p className="lw-card-small">Nos complace que seas parte del inicio de esta nueva etapa, que se llevará a cabo el día</p>
-              <p className="lw-card-date">Sábado 20 de marzo<br />del 2027</p>
-              <p className="lw-card-venue">{ev.time || "6:00 PM"}. Casa de España, Salón Terraza del Mar, Santo Domingo, República Dominicana</p>
+            <img src={`${A}/invitacion.webp`} alt="" aria-hidden="true" width="1100" height="1518" />
+            <div className="sr-only">
+              <h1>Lynette &amp; Eduardo</h1>
+              <p>Con la bendición de Dios y de nuestros padres, nos complace que seas parte del inicio de esta nueva etapa, que se llevará a cabo el sábado 20 de marzo del 2027, {ev.time || "6:00 PM"}, en Casa de España, Salón Terraza del Mar, Santo Domingo, República Dominicana.</p>
             </div>
           </div>
 
-          <img className="lw-h lw-h-dahlia" src={`${A}/dalia.webp`} alt="" aria-hidden="true" />
+          <img className="lw-h lw-h-dahlia" src={`${A}/flor-vino.webp`} alt="" aria-hidden="true" width="376" height="320" />
 
           <div className="lw-h lw-tag lw-tag-rsvp">
             <img src={`${A}/tarjeta-rsvp.webp`} alt="" aria-hidden="true" />
@@ -151,7 +186,6 @@ export default function LeWedding({ portal }) {
       <section className="lw-story" aria-labelledby="lw-story-title">
         <img className="lw-flores lw-flores-l" src={`${A}/flores-izq.webp`} alt="" aria-hidden="true" />
         <img className="lw-flores lw-flores-r" src={`${A}/flores-der.webp`} alt="" aria-hidden="true" />
-        <img className="lw-story-vine" src={`${A}/enredadera.webp`} alt="" aria-hidden="true" />
         <div className="lw-inner" data-reveal>
           <div className="lw-photostamps" aria-hidden="true">
             <img className="lw-ps-1" src={`${A}/sello-foto-1.webp`} alt="" />
@@ -173,7 +207,7 @@ export default function LeWedding({ portal }) {
         <div className="lw-inner" data-reveal>
           <img className="lw-door" src={`${A}/puerta.webp`} alt="Ilustración de la puerta de Casa de España" width="480" height="702" />
           <h2 id="lw-place-title" className="lw-title">Nos encontramos aquí</h2>
-          <p className="lw-lead">Una buena mesa, nuestra gente favorita y una ocasión para celebrar. Te compartimos la dirección de Casa de España para encontrarnos y crear recuerdos juntos.</p>
+          <p className="lw-lead">Una buena mesa, nuestra gente favorita y una ocasión para celebrar. Te compartimos la dirección de<br className="lw-br-d" /> Casa de España para encontrarnos y crear recuerdos juntos.</p>
           {ev.mapsUrl && <a className="lw-pill" href={ev.mapsUrl} target="_blank" rel="noopener noreferrer">Cómo llegar</a>}
         </div>
         <div className="lw-dress" data-reveal>
@@ -181,16 +215,16 @@ export default function LeWedding({ portal }) {
           <div className="lw-dress-text">
             <h2 className="lw-title lw-title-sm">Código de vestimenta</h2>
             <p className="lw-dress-kind">Formal Attire</p>
-            <p>Para las damas, sugerimos vestido largo, acorde con la elegancia y el carácter formal de la celebración.</p>
+            <p className="lw-dress-p1">Para las damas, sugerimos vestido largo, acorde con la elegancia y el carácter formal de la celebración.</p>
             <p>Para los caballeros, requerimos vestimenta formal con saco.</p>
             <p className="lw-dress-note"><em>Importante:</em> No se permiten chacabanas de ningún tipo.</p>
           </div>
         </div>
-        <img className="lw-place-dahlia" src={`${A}/dalia.webp`} alt="" aria-hidden="true" />
       </section>
 
       {/* CUENTA REGRESIVA */}
       <section className="lw-count" aria-labelledby="lw-count-title">
+        <img className="lw-count-flower" src={`${A}/flor-vino.webp`} alt="" aria-hidden="true" width="376" height="320" />
         <img className="lw-count-photo" src={`${A}/foto-cuenta.webp`} alt="Lynette y Eduardo frente a una reja de hierro" />
         <div className="lw-count-shade" aria-hidden="true" />
         <div className="lw-count-inner" data-reveal>
@@ -210,10 +244,7 @@ export default function LeWedding({ portal }) {
       {/* LOS MOMENTOS */}
       <section className="lw-moments" aria-labelledby="lw-moments-title">
         <div className="lw-moments-inner">
-          <div className="lw-frame" data-reveal>
-            <img className="lw-frame-border" src={`${A}/marco-rosado.webp`} alt="" aria-hidden="true" />
-            <img className="lw-frame-photo" src={`${A}/foto-momentos.webp`} alt="Lynette y Eduardo" />
-          </div>
+          <Gallery photos={GALLERY} />
           <div className="lw-moments-text" data-reveal>
             <h2 id="lw-moments-title" className="lw-moments-title">Los momentos</h2>
             <p className="lw-moments-sub">que nos esperan</p>

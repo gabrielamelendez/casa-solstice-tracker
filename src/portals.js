@@ -34,7 +34,8 @@ export const PORTALS = {
       time: "6:00 PM",
       venue: "Casa de España · Salón Terraza del Mar",
       city: "Santo Domingo, República Dominicana",
-      mapsUrl: "https://www.google.com/maps/search/?api=1&query=Casa+de+Espa%C3%B1a+Santo+Domingo",
+      mapsUrl: "https://maps.app.goo.gl/zRWL5ycZiJFuBRSq6",
+      registry: { amazon: "https://www.amazon.com/wedding/guest-view/2YLAUCR233M7I" },
       start: "20270320T220000Z", // 6:00 PM en RD (UTC-4)
       end: "20270321T060000Z",   // 2:00 AM
       dressCode: "Formal · vestido largo para las damas, saco para los caballeros",

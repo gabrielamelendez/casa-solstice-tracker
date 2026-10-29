@@ -8,7 +8,7 @@
   background:var(--grain), linear-gradient(180deg,var(--rose) 0%,var(--rose) 45%,#F6CDD5 100%);
   min-height:100vh; display:flex; flex-direction:column;
 }
-.rsvp-le button,.rsvp-le input,.rsvp-le select,.rsvp-le textarea{font-family:inherit}
+.rsvp-le,.rsvp-le *,.rsvp-le *::placeholder{font-family:'Cormorant Garamond',Georgia,serif !important}
 
 /* Header */
 .rsvp-le .le-head{position:relative;overflow:hidden;text-align:center;color:var(--blush);

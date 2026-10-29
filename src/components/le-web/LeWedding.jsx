@@ -151,8 +151,10 @@ export default function LeWedding({ portal }) {
       {/* HERO — the invitation suite */}
       <header className="lw-hero">
         <div className="lw-hero-stage">
-          <img className="lw-rama-arriba" src={`${A}/rama-arriba.webp`} alt="" aria-hidden="true" width="934" height="680" />
-          <img className="lw-rama-abajo" src={`${A}/rama-abajo.webp`} alt="" aria-hidden="true" width="1212" height="1254" />
+          <img className="lw-rama-arriba lw-d-only" src={`${A}/rama-arriba.webp`} alt="" aria-hidden="true" width="934" height="680" />
+          <img className="lw-rama-arriba lw-m-only" src={`${A}/rama-m-arriba.webp`} alt="" aria-hidden="true" width="439" height="395" loading="lazy" />
+          <img className="lw-rama-abajo lw-d-only" src={`${A}/rama-abajo.webp`} alt="" aria-hidden="true" width="1212" height="1254" />
+          <img className="lw-rama-abajo lw-m-only" src={`${A}/rama-m-abajo.webp`} alt="" aria-hidden="true" width="458" height="413" loading="lazy" />
           <img className="lw-h lw-h-stamps" src={`${A}/sellos-blancos.webp`} alt="" aria-hidden="true" />
           <img className="lw-h lw-h-envelope" src={`${A}/sobre-abierto.webp`} alt="" aria-hidden="true" />
 
@@ -170,7 +172,7 @@ export default function LeWedding({ portal }) {
             <img src={`${A}/tarjeta-rsvp.webp`} alt="" aria-hidden="true" />
             <div className="lw-tag-text">
               <h2 className="sr-only">RSVP</h2>
-              <p>Haz clic abajo para confirmar que serás parte de este comienzo.</p>
+              <p>Haz clic abajo para<br className="lw-br-m" /> confirmar que serás<br className="lw-br-m" /> parte de este comienzo.</p>
               <p className="lw-tag-by">Responder antes del 10 de febrero, 2027</p>
               <a className="lw-tag-link" href={rsvpHref}>Confirmar</a>
             </div>
@@ -180,8 +182,10 @@ export default function LeWedding({ portal }) {
             <img src={`${A}/tarjeta-regalos.webp`} alt="" aria-hidden="true" />
             <div className="lw-tag-text">
               <h2 className="sr-only">Regalos</h2>
-              <p>Hemos creado una lista con detalles que nos ayudarán a dar inicio a nuestra vida juntos.</p>
-              {registry.casaCuesta && <a className="lw-tag-link" href={registry.casaCuesta} target="_blank" rel="noopener noreferrer">Casa Cuesta</a>}
+              <p>Hemos creado una<br className="lw-br-m" /> lista con detalles que nos<br className="lw-br-m" /> <em className="lw-m-it">ayudarán a dar inicio a nuestra<br className="lw-br-m" /> vida juntos.</em></p>
+              {registry.casaCuesta
+                ? <a className="lw-tag-link" href={registry.casaCuesta} target="_blank" rel="noopener noreferrer">Casa Cuesta</a>
+                : <span className="lw-tag-link lw-tag-soon" title="Muy pronto">Casa Cuesta</span>}
               {registry.amazon && <a className="lw-tag-link" href={registry.amazon} target="_blank" rel="noopener noreferrer">Amazon</a>}
             </div>
           </div>
@@ -192,6 +196,7 @@ export default function LeWedding({ portal }) {
       <section className="lw-story" aria-labelledby="lw-story-title">
         <img className="lw-flores lw-flores-l" src={`${A}/flores-izq.webp`} alt="" aria-hidden="true" />
         <img className="lw-flores lw-flores-r" src={`${A}/flores-der.webp`} alt="" aria-hidden="true" />
+        <img className="lw-story-vine lw-m-only" src={`${A}/rama-m-story.webp`} alt="" aria-hidden="true" width="510" height="447" loading="lazy" />
         <div className="lw-inner" data-reveal>
           <div className="lw-photostamps" aria-hidden="true">
             <img className="lw-ps-1" src={`${A}/sello-foto-1.webp`} alt="" />
@@ -201,7 +206,7 @@ export default function LeWedding({ portal }) {
           <div className="lw-story-text">
             <p>Nos conocimos entre amigos, en una historia que parecía destinada a cruzarse mucho antes de encontrar el momento exacto para comenzar.</p>
             <p>Ocho años después, nuestro amor vive en los detalles que más importan: una mesa compartida, un nuevo restaurante por descubrir, un viaje planeado alrededor de sabores y experiencias, y la tranquilidad de saber que la mejor parte de cualquier lugar siempre será encontrarnos el uno al otro.</p>
-            <p>Hoy, queremos celebrar todo lo que hemos construido y dar la bienvenida a esta nueva etapa de nuestras vidas rodeados de las personas que más queremos. Nos haría mucha ilusión que fueras parte de nuestro gran día y que compartieras con nosotros el comienzo de este nuevo capítulo.</p>
+            <p>Hoy, queremos celebrar todo lo que hemos construido y dar la bienvenida a esta nueva etapa de nuestras vidas rodeados de las personas que más<br className="lw-br-m" /> queremos. Nos haría mucha ilusión que fueras parte de nuestro gran día y que compartieras con nosotros el comienzo de este nuevo capítulo.</p>
           </div>
           <p className="lw-signoff">Con amor,</p>
           <img className="lw-firma" src={`${A}/firma.webp`} alt="Lynette & Eduardo" width="2002" height="360" />
@@ -217,7 +222,8 @@ export default function LeWedding({ portal }) {
           {ev.mapsUrl && <a className="lw-pill" href={ev.mapsUrl} target="_blank" rel="noopener noreferrer">Cómo llegar</a>}
         </div>
         <div className="lw-dress" data-reveal>
-          <img className="lw-dress-frame" src={`${A}/marco-vestimenta.webp`} alt="" aria-hidden="true" />
+          <img className="lw-dress-frame lw-d-only" src={`${A}/marco-vestimenta.webp`} alt="" aria-hidden="true" />
+          <img className="lw-dress-frame lw-m-only" src={`${A}/marco-vestimenta-m.webp`} alt="" aria-hidden="true" width="837" height="688" loading="lazy" />
           <div className="lw-dress-text">
             <h2 className="lw-title lw-title-sm">Código de vestimenta</h2>
             <p className="lw-dress-kind">Formal Attire</p>
@@ -231,7 +237,10 @@ export default function LeWedding({ portal }) {
       {/* CUENTA REGRESIVA */}
       <section className="lw-count" aria-labelledby="lw-count-title">
         <img className="lw-count-flower" src={`${A}/flor-vino.webp`} alt="" aria-hidden="true" width="376" height="320" />
-        <img className="lw-count-photo" src={`${A}/foto-cuenta.webp`} alt="Lynette y Eduardo frente a una reja de hierro" />
+        <picture>
+          <source media="(max-width: 820px)" srcSet={`${A}/foto-cuenta-m.webp`} />
+          <img className="lw-count-photo" src={`${A}/foto-cuenta.webp`} alt="Lynette y Eduardo frente a una reja de hierro" />
+        </picture>
         <div className="lw-count-shade" aria-hidden="true" />
         <div className="lw-count-inner" data-reveal>
           <h2 id="lw-count-title" className="lw-title lw-title-light">{t.done ? "¡Llegó el día!" : "Cada vez falta menos…"}</h2>

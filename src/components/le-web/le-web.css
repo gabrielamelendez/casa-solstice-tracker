@@ -229,3 +229,14 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
   .lw *{animation:none!important;transition:none!important}
   [data-reveal],.lw-hero .lw-h,.lw-hero-vine{opacity:1!important;translate:none!important}
 }
+
+/* ───────── Countdown embed (for Canva) ───────── */
+.lw-embed{background:transparent;min-height:100vh}
+.lw-embed .lw-count{min-height:100vh}
+.lw-embed-plain{background:transparent}
+.lw-embed-wine .lw-count .lw-title-light,.lw-embed-wine .lw-count-grid{color:#93253F}
+/* inside a frame the viewport is the embed box, so size the numbers to it */
+.lw-embed .lw-count-num{font-size:clamp(40px,13vw,240px)}
+.lw-embed .lw-count-label{font-size:clamp(14px,2.8vw,52px)}
+.lw-embed .lw-title{font-size:clamp(22px,3.6vw,68px)}
+@media (max-width:820px){.lw-embed .lw-count-grid{grid-template-columns:repeat(4,1fr)}.lw-embed .lw-count-num{font-size:clamp(34px,15vw,110px)}}

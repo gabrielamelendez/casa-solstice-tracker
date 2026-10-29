@@ -11,7 +11,7 @@ import "./le-web.css";
 // Content (dates, venue, links) comes from the L&E entry in portals.js.
 
 const A = "/assets/le/web";
-const WEDDING_AT = new Date("2027-03-20T18:00:00-04:00");
+export const WEDDING_AT = new Date("2027-03-20T18:00:00-04:00");
 const OPENED_KEY = "le_web_opened";
 
 function readOpened() {
@@ -21,7 +21,7 @@ function saveOpened() {
   try { sessionStorage.setItem(OPENED_KEY, "1"); } catch { /* private mode */ }
 }
 
-function useCountdown(target) {
+export function useCountdown(target) {
   const calc = () => {
     const ms = Math.max(0, target.getTime() - Date.now());
     const s = Math.floor(ms / 1000);

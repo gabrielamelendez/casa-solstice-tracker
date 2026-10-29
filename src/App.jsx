@@ -8,6 +8,7 @@ import Seating from "./components/portal/Seating";
 import Rsvp from "./components/portal/Rsvp";
 import TemplateTracker from "./components/portal/TemplateTracker";
 import LeWedding from "./components/le-web/LeWedding";
+import LeCountdown from "./components/le-web/LeCountdown";
 import { PORTALS } from "./portals";
 
 // Papelería tab per portal: the existing bespoke trackers, or the template one.
@@ -32,6 +33,7 @@ function PortalRoute({ page }) {
   if (page === "invitados") return <GuestList portal={portal} />;
   if (page === "mesas") return <Seating portal={portal} />;
   if (page === "rsvp") return <Rsvp portal={portal} />;
+  if (page === "cuenta") return slug === "lynette-eduardo" ? <LeCountdown /> : <NotFound />;
   if (page === "boda") return slug === "lynette-eduardo" ? <LeWedding portal={portal} /> : <NotFound />;
   const Tracker = TRACKERS[slug];
   return Tracker ? <Tracker /> : <TemplateTracker portal={portal} />;
@@ -47,6 +49,7 @@ export default function App() {
         <Route path="/:slug/mesas" element={<PortalRoute page="mesas" />} />
         <Route path="/:slug/rsvp" element={<PortalRoute page="rsvp" />} />
         <Route path="/:slug/boda" element={<PortalRoute page="boda" />} />
+        <Route path="/:slug/cuenta-regresiva" element={<PortalRoute page="cuenta" />} />
       </Routes>
     </BrowserRouter>
   );

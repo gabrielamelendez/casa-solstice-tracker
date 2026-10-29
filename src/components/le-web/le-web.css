@@ -53,7 +53,7 @@ html.lw-locked,html.lw-locked body{overflow:hidden}
 .lw-hero-stage{position:relative;width:100%;max-width:1920px;margin:0 auto;aspect-ratio:1920/1081;container-type:inline-size}
 .lw-h{position:absolute;height:auto}
 .lw-h img,.lw-h{height:auto}
-.lw-h-stamps{left:8.6%;top:18.5%;width:18.5%;filter:drop-shadow(0 8px 12px rgba(60,20,30,.22))}
+.lw-h-stamps{left:6.8%;top:9.5%;width:18.5%;filter:drop-shadow(0 8px 12px rgba(60,20,30,.22))}
 .lw-h-envelope{left:16.35%;top:4.26%;width:48.85%}
 .lw-card{left:44.27%;top:20.72%;width:29.69%;container-type:inline-size}
 .lw-card>img{width:100%;height:auto;filter:drop-shadow(0 10px 22px rgba(90,20,40,.18))}

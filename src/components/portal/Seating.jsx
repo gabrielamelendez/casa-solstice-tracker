@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import PortalShell, { SyncBadge } from "./PortalShell";
 import { useCollection, newId, seatsFor } from "../../lib/portalStore";
 import { SAMPLE_TABLES } from "../../portals";
+import ConfirmButton from "./ConfirmButton";
 
 // Small seat diagram: filled dots = occupied seats.
 function TableDiagram({ shape, capacity, used }) {
@@ -69,7 +70,7 @@ function TableCard({ t, guests, selected, onSeat, onUnseat, onSave, onDelete, on
         {guests.length === 0 && <li className="muted">Mesa vacía</li>}
       </ul>
       {selected && <button type="button" className="p-btn seat-here" onClick={() => onSeat(t.id)}>Sentar aquí</button>}
-      <button type="button" className="table-del" onClick={() => { if (confirm(`¿Eliminar ${t.name}? Sus invitados vuelven a "Por sentar".`)) onDelete(t.id); }}>Eliminar mesa</button>
+      <ConfirmButton className="table-del" label="Eliminar mesa" confirmLabel={`Sí, eliminar ${t.name}`} onConfirm={() => onDelete(t.id)} />
     </div>
   );
 }

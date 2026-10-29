@@ -200,3 +200,7 @@ span.rsvp-pill{cursor:default}
 .portal-brand-sub{font-size:9px;letter-spacing:.22em;text-transform:uppercase;color:var(--p-mid);opacity:.6}
 
 @media (prefers-reduced-motion:reduce){.portal *{transition:none!important}}
+.confirm-inline{display:inline-flex;align-items:center;gap:8px;flex-wrap:wrap}
+.portal .p-btn.danger.confirm-yes{background:#9A2B2B;color:#fff;border-color:#9A2B2B}
+.table-del.confirm-yes{color:#9A2B2B;font-weight:700}
+.confirm-no{background:none;border:none;color:var(--p-mid);text-decoration:underline;cursor:pointer;font-size:13px;padding:6px}

@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import PortalShell, { SyncBadge } from "./PortalShell";
 import { useCollection, newId, RSVP_KEYS, normalize } from "../../lib/portalStore";
 import { SAMPLE_GUESTS } from "../../portals";
+import ConfirmButton from "./ConfirmButton";
 
 const RSVP_STYLE = {
   "Pendiente": { bg: "#EDE0CE", color: "#6B4E3D" },
@@ -178,7 +179,7 @@ function GuestRow({ g, tableName, onSave, onDelete, groups }) {
           {g.message && <div className="guest-message">“{g.message}”</div>}
           <div className="guest-actions">
             {g.responded_at && <span className="p-help">Respondió el {new Date(g.responded_at).toLocaleDateString("es-DO", { day: "numeric", month: "short" })}</span>}
-            <button type="button" className="p-btn danger" onClick={() => { if (confirm(`¿Eliminar a ${g.name} de la lista?`)) onDelete(g.id); }}>Eliminar</button>
+            <ConfirmButton className="p-btn danger" label="Eliminar" confirmLabel="Sí, eliminar" onConfirm={() => onDelete(g.id)} />
           </div>
         </div>
       )}

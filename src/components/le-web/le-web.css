@@ -1,0 +1,231 @@
+/* Lynette & Eduardo · wedding website */
+@font-face{font-family:'Hanoman';src:url('/fonts/le/hanoman-thin.woff2') format('woff2');font-weight:100 400;font-style:normal;font-display:swap}
+
+html.lw-locked,html.lw-locked body{overflow:hidden}
+
+.lw{
+  --wine:#662030; --wine2:#93253F; --rose:#FFE5EB; --pink:#EAB8BF; --blush:#E4CCD1;
+  --olive:#585816; --ink:#5B1A2A;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.4 0 0 0 0 0.12 0 0 0 0 0.19 0 0 0 .07 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  font-family:'Cormorant Garamond',Georgia,serif; color:var(--ink);
+  background:var(--rose); overflow-x:clip; -webkit-font-smoothing:antialiased;
+}
+.lw *,.lw *::before,.lw *::after{box-sizing:border-box}
+.lw img{display:block;max-width:none}
+.lw p{margin:0}
+.lw a{color:inherit}
+.lw .lw-pill{color:var(--wine2)}
+.lw .lw-pill:hover,.lw .lw-pill-solid{color:var(--rose)}
+.lw .lw-tag-rsvp .lw-tag-link{color:var(--olive)}
+.lw .lw-tag-gifts .lw-tag-link{color:var(--wine2)}
+.lw .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lw :focus-visible{outline:2px solid var(--wine2);outline-offset:4px;border-radius:4px}
+
+/* Floral line drawing (tone on tone) */
+.lw-flores{position:absolute;top:0;height:100%;width:auto;opacity:.33;pointer-events:none;user-select:none}
+.lw-flores-l{left:0}
+.lw-flores-r{right:0}
+
+/* ───────── INTRO ───────── */
+.lw-intro{position:fixed;inset:0;z-index:100;background:var(--grain),var(--wine);display:flex;align-items:center;justify-content:center;
+  overflow:hidden;color:var(--blush);transition:opacity .7s ease .45s,visibility 0s linear 1.15s}
+.lw-intro .lw-flores{height:110%;top:-5%}
+.lw-intro-inner{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:24px 16px;width:100%}
+.lw-intro-kicker{font-style:italic;font-weight:500;font-size:clamp(24px,2.2vw,42px)}
+.lw-intro-firma{width:min(82vw,560px);height:auto;margin:6px 0 clamp(18px,3vh,30px)}
+.lw-envelope{position:relative;border:none;background:none;padding:0;cursor:pointer;width:min(84vw,674px);
+  filter:drop-shadow(0 18px 30px rgba(0,0,0,.28));transition:transform .5s ease}
+.lw-envelope:hover{transform:translateY(-4px) rotate(-.6deg)}
+.lw .lw-envelope:focus-visible{outline:1px solid rgba(228,204,209,.6);outline-offset:10px}
+.lw-envelope-body{width:100%;height:auto}
+.lw-envelope-seal{position:absolute;width:16%;height:auto;left:42%;top:42%;transition:transform .5s ease,opacity .4s ease}
+.lw-envelope:hover .lw-envelope-seal{transform:scale(1.05)}
+.lw-intro-cta{margin-top:clamp(24px,4vh,40px);font-size:clamp(16px,1.7vw,32px);letter-spacing:.14em;text-transform:uppercase;opacity:.9;
+  animation:lw-pulse 2.6s ease-in-out infinite}
+@keyframes lw-pulse{0%,100%{opacity:.55}50%{opacity:1}}
+.lw-intro.opening .lw-envelope-seal{transform:scale(1.5) rotate(18deg);opacity:0}
+.lw-intro.opening .lw-envelope{transform:translateY(-6vh) scale(1.12);opacity:0;transition:transform .9s cubic-bezier(.6,0,.3,1) .2s,opacity .6s ease .45s}
+.lw-intro.opening .lw-intro-kicker,.lw-intro.opening .lw-intro-firma,.lw-intro.opening .lw-intro-cta{opacity:0;transition:opacity .4s ease}
+.lw-intro.opening{opacity:0;visibility:hidden}
+
+/* ───────── HERO (desktop: 1920×1081 stage, positions from the Figma) ───────── */
+.lw-hero{position:relative;background:var(--grain),var(--rose);overflow:hidden}
+.lw-hero::before{content:"";position:absolute;inset:0;background:url("/assets/le/web/degradado-hero.webp") center bottom/100% 100% no-repeat;opacity:.55;mix-blend-mode:multiply;pointer-events:none}
+.lw-hero-stage{position:relative;width:100%;max-width:1920px;margin:0 auto;aspect-ratio:1920/1081;container-type:inline-size}
+.lw-h{position:absolute;height:auto}
+.lw-h img,.lw-h{height:auto}
+.lw-h-stamps{left:9.48%;top:17.2%;width:18.5%;transform:rotate(-2deg)}
+.lw-h-envelope{left:16.35%;top:4.26%;width:48.85%}
+.lw-card{left:44.27%;top:20.72%;width:29.69%;container-type:inline-size}
+.lw-card>img{width:100%;height:auto;filter:drop-shadow(0 10px 22px rgba(90,20,40,.18))}
+.lw-h-dahlia{left:62.34%;top:55.88%;width:23.23%;filter:drop-shadow(0 8px 14px rgba(90,20,40,.18))}
+.lw-tag{container-type:inline-size}
+.lw-tag>img{width:100%;height:auto;filter:drop-shadow(0 10px 16px rgba(60,30,10,.2))}
+.lw-tag-rsvp{left:33.23%;top:47.36%;width:18.23%}
+.lw-tag-gifts{left:67.08%;top:10.92%;width:17.14%}
+.lw-hero-vine{position:absolute;right:-1.5%;top:-5%;width:15%;height:auto;transform:rotate(180deg);pointer-events:none;z-index:5}
+
+/* Invitation text over the card */
+.lw-card-text{position:absolute;left:21%;right:21%;top:28.4%;display:flex;flex-direction:column;align-items:center;text-align:center;color:var(--wine2);gap:1.6cqw}
+.lw-card-small{font-size:2.05cqw;letter-spacing:.06em;text-transform:uppercase;line-height:1.25}
+.lw-card-names{margin:.6cqw 0 .4cqw;font-family:'Hanoman',serif;font-weight:400;font-size:10.6cqw;line-height:.92;text-transform:uppercase;letter-spacing:.01em;display:grid;grid-template-columns:auto auto;justify-content:center;align-items:end}
+.lw-card-names span:first-child{grid-column:1;grid-row:1}
+.lw-card-names .lw-amp{grid-column:2;grid-row:1/3;font-size:1.5em;line-height:.8;align-self:center;margin-left:-.05em}
+.lw-card-names span:last-child{grid-column:1;grid-row:2}
+.lw-card-date{font-family:'Hanoman',serif;font-size:4.3cqw;line-height:1.05;text-transform:uppercase;margin-top:.8cqw}
+.lw-card-venue{font-style:italic;font-size:2.15cqw;line-height:1.3;max-width:60%;margin-right:36%}
+
+/* Tag texts (RSVP + Regalos) */
+.lw-tag-text{position:absolute;display:flex;flex-direction:column;align-items:center;text-align:center}
+.lw-tag-rsvp .lw-tag-text{left:20%;right:20%;top:34%;color:var(--olive);font-size:5.4cqw;line-height:1.15;gap:5cqw}
+.lw-tag-by{font-style:italic}
+.lw-tag-gifts .lw-tag-text{left:14%;right:14%;top:42%;color:#FBE7EC;font-size:5.2cqw;line-height:1.2;gap:4cqw}
+.lw-tag-link{font-weight:600;font-size:1em;letter-spacing:.06em;text-transform:uppercase;text-decoration:underline;text-underline-offset:.25em;text-decoration-thickness:1px}
+.lw-tag-rsvp .lw-tag-link{color:var(--olive)}
+.lw-tag-gifts .lw-tag-link{color:var(--wine2)}
+.lw-tag-gifts .lw-tag-text p+.lw-tag-link{margin-top:2cqw}
+.lw-tag-link:hover{text-decoration-thickness:2px}
+
+/* Entrance after the envelope opens */
+.lw-hero .lw-h,.lw-hero-vine{opacity:0;transform-origin:center}
+.lw.is-open .lw-hero .lw-h,.lw.is-open .lw-hero-vine{animation:lw-drop .9s cubic-bezier(.2,.7,.2,1) both}
+.lw.is-open .lw-h-envelope{animation-delay:.05s}
+.lw.is-open .lw-card{animation-delay:.2s}
+.lw.is-open .lw-h-stamps{animation-delay:.3s}
+.lw.is-open .lw-tag-rsvp{animation-delay:.4s}
+.lw.is-open .lw-tag-gifts{animation-delay:.5s}
+.lw.is-open .lw-h-dahlia{animation-delay:.6s}
+.lw.is-open .lw-hero-vine{animation-name:lw-fade;animation-delay:.7s}
+@keyframes lw-drop{from{opacity:0;translate:0 26px}to{opacity:1;translate:0 0}}
+@keyframes lw-fade{from{opacity:0}to{opacity:1}}
+
+/* ───────── SECTIONS ───────── */
+.lw-inner{position:relative;width:100%;max-width:1320px;margin:0 auto;padding:0 24px;display:flex;flex-direction:column;align-items:center;text-align:center}
+.lw-title{font-family:'Cormorant Garamond',serif;font-style:italic;font-weight:500;font-size:clamp(34px,3.25vw,62px);line-height:1.1;color:var(--wine2);margin:0}
+.lw-title-light{color:var(--blush)}
+.lw-title-sm{font-size:clamp(28px,2.6vw,50px)}
+.lw-lead{font-size:clamp(18px,1.46vw,28px);line-height:1.35;max-width:1210px;color:var(--wine2);margin-top:clamp(8px,1vw,16px)}
+.lw-signoff{font-style:italic;font-weight:500;font-size:clamp(22px,2.2vw,42px);color:var(--blush);margin-top:clamp(18px,2vw,34px)}
+.lw-firma{width:min(78vw,673px);height:auto;margin-top:4px}
+
+/* Historia */
+.lw-story{position:relative;overflow:hidden;background:var(--grain),var(--wine2);color:var(--blush);padding:clamp(48px,6vw,110px) 0 clamp(56px,6vw,110px)}
+.lw-story .lw-flores{opacity:.22}
+.lw-story-vine{position:absolute;left:-2%;top:-14%;width:clamp(150px,17vw,330px);height:auto;transform:rotate(-24deg);z-index:2;pointer-events:none}
+.lw-photostamps{position:relative;width:clamp(220px,31vw,600px);aspect-ratio:600/340;margin-bottom:clamp(8px,1vw,16px)}
+.lw-ps-1,.lw-ps-2{position:absolute;height:auto;filter:drop-shadow(0 8px 12px rgba(0,0,0,.28))}
+.lw-ps-1{left:6%;top:4%;width:44%}
+.lw-ps-2{left:38%;top:0;width:66%}
+.lw-story-text{max-width:1266px;font-size:clamp(18px,1.4vw,27px);line-height:1.4;margin-top:clamp(16px,2vw,30px);display:flex;flex-direction:column;gap:1.1em}
+
+/* Ubicación + vestimenta */
+.lw-place{position:relative;background:var(--grain),var(--pink);padding:clamp(48px,5vw,86px) 0 clamp(64px,7vw,130px);overflow:hidden}
+.lw-door{width:clamp(130px,11vw,210px);height:auto;margin-bottom:clamp(10px,1vw,18px)}
+.lw-pill{display:inline-flex;align-items:center;justify-content:center;margin-top:clamp(18px,2vw,34px);min-height:52px;padding:.35em 2.2em;
+  border:2px solid var(--wine2);border-radius:999px;color:var(--wine2);text-decoration:none;text-transform:uppercase;letter-spacing:.06em;
+  font-size:clamp(18px,1.95vw,36px);transition:background .25s,color .25s}
+.lw-pill:hover{background:var(--wine2);color:var(--rose)}
+.lw-pill-solid{background:var(--wine2);color:var(--rose);font-size:clamp(16px,1.3vw,22px);letter-spacing:.14em;padding:.6em 2.2em}
+.lw-pill-solid:hover{background:var(--wine);color:var(--rose)}
+.lw-dress{position:relative;width:min(1375px,calc(100% - 48px));aspect-ratio:1375/459;margin:clamp(40px,4vw,72px) auto 0;container-type:inline-size}
+.lw-dress-frame{position:absolute;inset:0;width:100%;height:100%}
+.lw-dress-text{position:absolute;inset:8% 9%;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;color:var(--wine2);font-size:clamp(14px,1.75cqw,26px);line-height:1.35}
+.lw-dress-text .lw-title-sm{font-size:clamp(26px,3.5cqw,50px);margin-bottom:.35em}
+.lw-dress-kind{font-style:italic;font-weight:600;font-size:1.35em}
+.lw-dress-note{margin-top:1em}
+.lw-dress-note em{font-weight:600}
+.lw-place-dahlia{position:absolute;left:-9.6%;bottom:-10%;width:clamp(150px,25vw,488px);height:auto;filter:drop-shadow(0 8px 14px rgba(90,20,40,.2));z-index:3}
+
+/* Cuenta regresiva */
+.lw-count{position:relative;min-height:clamp(420px,40.6vw,780px);display:flex;align-items:center;justify-content:center;overflow:visible;isolation:isolate}
+.lw-count-photo{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 46%;z-index:-2}
+.lw-count-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,10,18,.18),rgba(40,10,18,.34));z-index:-1}
+.lw-count-inner{width:100%;max-width:1240px;padding:48px 24px;text-align:center}
+.lw-count .lw-title-light{color:#FFF4F6}
+.lw-count-grid{display:grid;grid-template-columns:repeat(4,1fr);margin-top:clamp(4px,1vw,16px);color:#FFF4F6}
+.lw-count-cell{display:flex;flex-direction:column;align-items:center}
+.lw-count-num{font-family:'Hanoman',serif;font-size:clamp(56px,11vw,212px);line-height:.95;font-variant-numeric:tabular-nums}
+.lw-count-label{font-size:clamp(16px,2.5vw,48px);line-height:1}
+.lw-count-stamps{position:absolute;right:-2%;bottom:-16%;width:clamp(140px,21vw,440px);height:auto;filter:drop-shadow(0 10px 18px rgba(0,0,0,.25));z-index:3;transform:rotate(-4deg)}
+
+/* Los momentos */
+.lw-moments{position:relative;background:var(--grain),#FFE8EE;padding:clamp(64px,8vw,150px) 0 clamp(64px,8vw,150px)}
+.lw-moments-inner{max-width:1420px;margin:0 auto;padding:0 24px;display:grid;grid-template-columns:minmax(0,586fr) minmax(0,700fr);gap:clamp(28px,5vw,96px);align-items:center}
+.lw-frame{position:relative;width:100%;max-width:586px;justify-self:end;aspect-ratio:690/902}
+.lw-frame-photo{position:absolute;left:17.9%;top:14.6%;width:63.6%;height:61.4%;object-fit:cover;object-position:50% 30%;box-shadow:inset 0 0 0 1px rgba(147,37,63,.3)}
+.lw-frame-border{position:absolute;inset:0;width:100%;height:100%;object-fit:fill;filter:drop-shadow(0 8px 14px rgba(90,20,40,.14))}
+.lw-moments-text{display:flex;flex-direction:column;align-items:flex-start}
+.lw-moments-title{font-family:'Hanoman',serif;font-weight:400;text-transform:uppercase;color:var(--wine2);font-size:clamp(46px,5.2vw,100px);line-height:.95;margin:0}
+.lw-moments-sub{font-style:italic;font-size:clamp(22px,2.1vw,40px);color:var(--wine2);margin-top:2px}
+.lw-timeline{list-style:none;margin:clamp(14px,2vw,30px) 0 0;padding:0;display:flex;flex-direction:column;gap:clamp(10px,1.3vw,18px)}
+.lw-timeline li{display:grid;grid-template-columns:clamp(96px,9.3vw,178px) 1fr;align-items:center}
+.lw-tl-time{font-size:clamp(20px,2vw,38px);color:var(--wine2);text-align:right;padding-right:clamp(12px,1.4vw,26px);white-space:nowrap}
+.lw-tl-body{display:flex;flex-direction:column;border-left:1.5px solid var(--wine2);padding:clamp(4px,.6vw,10px) 0 clamp(4px,.6vw,10px) clamp(12px,1.4vw,26px)}
+.lw-tl-body strong{font-style:italic;font-weight:600;font-size:clamp(19px,1.7vw,32px);color:var(--wine2);line-height:1.15}
+.lw-tl-body span{font-size:clamp(16px,1.35vw,26px);color:var(--wine2);opacity:.85}
+.lw-moments .lw-pill-solid{margin-top:clamp(24px,2.6vw,44px)}
+
+/* Cierre */
+.lw-close{position:relative;background:var(--grain),var(--wine);color:var(--blush);text-align:center;padding-top:clamp(44px,5vw,90px);overflow:hidden}
+.lw-close-inner{position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;padding:0 24px}
+.lw-close .lw-signoff{margin-top:0}
+.lw-contact{font-size:clamp(18px,1.7vw,32px);line-height:1.45;margin-top:clamp(10px,1vw,18px)}
+.lw-contact a{color:#fff;text-underline-offset:4px}
+.lw-ribbon{width:100%;height:auto;margin-top:clamp(-120px,-6vw,-20px);pointer-events:none}
+
+/* Reveal on scroll */
+[data-reveal]{opacity:0;translate:0 26px;transition:opacity .9s ease,translate .9s cubic-bezier(.2,.7,.2,1)}
+[data-reveal].is-in{opacity:1;translate:0 0}
+
+/* ───────── PHONE / TABLET ───────── */
+@media (max-width:820px){
+  .lw-hero-stage{aspect-ratio:390/770}
+  .lw-h-stamps{left:-7%;top:1.7%;width:34%}
+  .lw-h-envelope{left:-14%;top:3.4%;width:90%}
+  .lw-card{left:23%;top:10.3%;width:73%}
+  .lw-h-dahlia{left:64%;top:46.3%;width:44%}
+  .lw-tag-rsvp{left:1%;top:57.7%;width:47%;transform:rotate(-4deg)}
+  .lw-tag-gifts{left:51%;top:64%;width:46%;transform:rotate(3deg)}
+  .lw-hero-vine{right:-14%;top:-1%;width:38%}
+  .lw-card-small{font-size:2.5cqw}
+  .lw-card-venue{font-size:2.5cqw}
+  .lw-card-text{gap:1.9cqw;left:18%;right:18%}
+  .lw-tag-rsvp .lw-tag-text{font-size:6.6cqw;left:16%;right:16%;top:33%}
+  .lw-tag-gifts .lw-tag-text{font-size:6.2cqw;left:12%;right:12%;top:40%}
+
+  .lw-flores{opacity:.25;height:auto;width:62vw;top:-4%}
+  .lw-flores-l{left:-26vw}.lw-flores-r{right:-26vw}
+  .lw-intro .lw-flores{height:auto;width:70vw;top:-2%}
+  .lw-story .lw-flores{opacity:.18}
+  .lw-story-vine{top:-60px;left:-40px;width:150px}
+  .lw-story-text{text-align:left}
+  .lw-story-text p{text-wrap:pretty}
+
+  .lw-dress{aspect-ratio:auto;padding:12% 9%;width:calc(100% - 32px)}
+  .lw-dress-frame{object-fit:fill}
+  .lw-dress-text{position:relative;inset:auto;font-size:17px}
+  .lw-dress-text .lw-title-sm{font-size:30px}
+  .lw-place-dahlia{left:-18%;bottom:-6%;width:44vw}
+
+  .lw-count{min-height:540px}
+  .lw-count-photo{object-position:52% 50%}
+  .lw-count-grid{grid-template-columns:repeat(2,1fr);row-gap:22px;margin-top:18px}
+  .lw-count-num{font-size:clamp(64px,20vw,104px)}
+  .lw-count-label{font-size:20px}
+  .lw-count-stamps{right:-6%;bottom:-48px;width:40vw}
+
+  .lw-moments-inner{grid-template-columns:1fr;justify-items:center;gap:36px}
+  .lw-frame{justify-self:center;width:80%}
+  .lw-moments-text{align-items:center;text-align:center}
+  .lw-timeline li{grid-template-columns:96px 1fr;text-align:left}
+  .lw-ribbon{margin-top:-10px;width:150%;margin-left:-25%}
+}
+@media (max-width:420px){
+  .lw-tag-rsvp .lw-tag-text{font-size:6.9cqw;gap:4cqw}
+  .lw-tag-gifts .lw-tag-text{font-size:6.4cqw;gap:3cqw}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .lw *{animation:none!important;transition:none!important}
+  [data-reveal],.lw-hero .lw-h,.lw-hero-vine{opacity:1!important;translate:none!important}
+}

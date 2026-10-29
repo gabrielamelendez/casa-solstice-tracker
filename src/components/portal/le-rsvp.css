@@ -21,9 +21,9 @@
 .rsvp-le .le-date{margin:0;font-size:13px;letter-spacing:.24em;text-transform:uppercase;opacity:.85;position:relative}
 
 /* Tone-on-tone floral line drawing (from the website intro) */
-.rsvp-le .le-flores{position:absolute;top:-30px;width:clamp(300px,44vw,640px);height:auto;max-width:none;opacity:.45;pointer-events:none}
+.rsvp-le .le-flores{position:absolute;top:-30px;width:clamp(300px,44vw,640px);height:auto;max-width:none;opacity:.3;pointer-events:none}
 .rsvp-le .le-flores-l{left:-150px}
-.rsvp-le .le-flores-r{right:-150px;transform:scaleX(-1)}
+.rsvp-le .le-flores-r{right:-150px}
 .rsvp-le .le-foot .le-flores{top:-60px}
 
 /* Main */

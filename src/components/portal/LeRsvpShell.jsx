@@ -26,8 +26,8 @@ export default function LeRsvpShell({ portal, children }) {
   return (
     <div className="portal rsvp-le">
       <header className="le-head">
-        <img className="le-flores le-flores-l" src={`${A}/flores.png`} alt="" aria-hidden="true" />
-        <img className="le-flores le-flores-r" src={`${A}/flores.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-l" src={`${A}/web/flores-izq.webp`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-r" src={`${A}/web/flores-der.webp`} alt="" aria-hidden="true" />
         <p className="le-kicker">Nos vamos a casar</p>
         <h1 className="le-names">{portal.names.toUpperCase()}</h1>
         <p className="le-date">{ev.dateLong || portal.dateLabel}{ev.time ? ` · ${ev.time}` : ""}</p>
@@ -38,10 +38,10 @@ export default function LeRsvpShell({ portal, children }) {
       </main>
 
       <footer className="le-foot">
-        <img className="le-flores le-flores-l" src={`${A}/flores.png`} alt="" aria-hidden="true" />
-        <img className="le-flores le-flores-r" src={`${A}/flores.png`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-l" src={`${A}/web/flores-izq.webp`} alt="" aria-hidden="true" />
+        <img className="le-flores le-flores-r" src={`${A}/web/flores-der.webp`} alt="" aria-hidden="true" />
         <p className="le-kicker">Con amor,</p>
-        <img className="le-foot-names" src={`${A}/firma.png`} alt={portal.names} width="673" height="121" />
+        <img className="le-foot-names" src={`${A}/web/firma.webp`} alt={portal.names} width="2002" height="360" />
         {ev.phone && (
           <p className="le-contact">
             Para más información, por favor escríbenos:<br />
